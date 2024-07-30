@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Builder Project</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="white-div" id="emptySpace"></div>
+        <div class="form-div">
+            <form id="multiStepForm">
+                <!-- Step 1: Element Type -->
+                <div class="form-step active" id="step1">
+                    <h2>Step 1: Element Type</h2>
+                    <label for="elementTypeSelect">Type</label>
+                    <select id="elementTypeSelect">
+                        <option value="div">Div</option>
+                        <option value="p">Paragraph</option>
+                        <option value="h">Heading</option>
+                        <option value="list">List</option>
+                        <option value="table">Table</option>
+                    </select>
+                    <button type="button" class="next-step" data-step="2">Next</button>
+                </div>
+
+                <!-- Step 2: Common Appearance -->
+                <div class="form-step" id="step2">
+                    <h2>Step 2: Common Appearance</h2>
+                    <label for="bgColorInput">Background Color</label>
+                    <input type="color" id="bgColorInput" class="color-input" />
+
+                    <label for="widthInput">Width (px)</label>
+                    <input type="number" id="widthInput" value="100" min="1" />
+
+                    <label for="heightInput">Height (px)</label>
+                    <input type="number" id="heightInput" value="100" min="1" />
+
+                    <label for="paddingInput">Padding (px)</label>
+                    <input type="number" id="paddingInput" value="10" min="0" />
+
+                    <label for="marginInput">Margin (px)</label>
+                    <input type="number" id="marginInput" value="10" min="0" />
+
+                    <label for="borderInput">Border (px)</label>
+                    <input type="number" id="borderInput" value="1" min="0" />
+
+                    <label for="borderColorInput">Border Color</label>
+                    <input type="color" id="borderColorInput" class="color-input" />
+
+                    <label for="borderTypeInput">Border Type</label>
+                    <select id="borderTypeInput">
+                        <option value="solid">Solid</option>
+                        <option value="dashed">Dashed</option>
+                        <option value="dotted">Dotted</option>
+                    </select>
+
+                    <button type="button" class="prev-step" data-step="1">Previous</button>
+                    <button type="button" class="next-step" data-step="3">Next</button>
+                </div>
+
+                <!-- Step 3: Text -->
+                <div class="form-step" id="step3">
+                    <h2>Step 3: Text</h2>
+                    <label for="textInput">Text</label>
+                    <textarea id="textInput" placeholder="Enter text"></textarea>
+
+                    <label for="textColorInput">Text Color</label>
+                    <input type="color" id="textColorInput" class="color-input" />
+
+                    <label for="textAlignHorizontalInput">Text Alignment Horizontal</label>
+                    <select id="textAlignHorizontalInput">
+                        <option value="left">Left</option>
+                        <option value="center">Center</option>
+                        <option value="right">Right</option>
+                    </select>
+
+                    <label for="textAlignVerticalInput">Text Alignment Vertical</label>
+                    <select id="textAlignVerticalInput">
+                        <option value="top">Top</option>
+                        <option value="middle">Middle</option>
+                        <option value="bottom">Bottom</option>
+                    </select>
+
+                    <label for="fontSizeInput">Font Size (px)</label>
+                    <input type="number" id="fontSizeInput" value="16" min="1" />
+
+                    <label for="fontStyleInput">Font Style</label>
+                    <select id="fontStyleInput">
+                        <option value="normal">Normal</option>
+                        <option value="italic">Italic</option>
+                        <option value="bold">Bold</option>
+                    </select>
+
+                    <button type="button" class="prev-step" data-step="2">Previous</button>
+                    <button type="button" class="next-step" data-step="4">Next</button>
+                </div>
+
+                <!-- Step 4: Special Settings -->
+                <div class="form-step" id="step4">
+                    <h2>Step 4: Special Settings</h2>
+
+                    <!-- For Divs -->
+                    <div id="shapeSettings" class="hidden">
+
+                        <label for="shapeSelect">Shape</label>
+                        <select id="shapeSelect">
+                            <option value="rectangle">Rectangle</option>
+                            <option value="circle">Circle</option>
+                            <option value="diamond">Diamond</option>
+                        </select>
+                    </div>
+
+                    <!-- For Lists -->
+                    <div id="listSettings" class="hidden">
+                        <label for="listTypeSelect">List Type</label>
+                        <select id="listTypeSelect">
+                            <option value="ul">Unordered List</option>
+                            <option value="ol">Ordered List</option>
+                        </select>
+
+                        <label for="numListItems">Number of List Items</label>
+                        <input type="number" id="numListItems" value="1" min="1" />
+                    </div>
+
+                    <!-- For Headers -->
+                    <div id="headerSettings" class="hidden">
+                        <label for="headerLevelSelect">Header Level</label>
+                        <select id="headerLevelSelect">
+                            <option value="h1">Heading 1</option>
+                            <option value="h2">Heading 2</option>
+                            <option value="h3">Heading 3</option>
+                            <option value="h4">Heading 4</option>
+                            <option value="h5">Heading 5</option>
+                            <option value="h6">Heading 6</option>
+                        </select>
+                    </div>
+
+                    <!-- For Tables -->
+                    <div id="tableSettings" class="hidden">
+                        <label for="numRows">Number of Rows</label>
+                        <input type="number" id="numRows" value="2" min="1" />
+
+                        <label for="numCols">Number of Columns</label>
+                        <input type="number" id="numCols" value="2" min="1" />
+
+                        <label for="cellContent">Cell Content (comma separated for each cell)</label>
+                        <textarea id="cellContent" placeholder="e.g., Cell 1,Cell 2,Cell 3,Cell 4"></textarea>
+
+                        <label for="cellAlignHorizontalInput">Cell Text Alignment Horizontal</label>
+                        <select id="cellAlignHorizontalInput">
+                            <option value="left">Left</option>
+                            <option value="center">Center</option>
+                            <option value="right">Right</option>
+                        </select>
+
+                        <label for="cellAlignVerticalInput">Cell Text Alignment Vertical</label>
+                        <select id="cellAlignVerticalInput">
+                            <option value="top">Top</option>
+                            <option value="middle">Middle</option>
+                            <option value="bottom">Bottom</option>
+                        </select>
+                    </div>
+
+                    <button type="button" class="prev-step" data-step="3">Previous</button>
+                    <button type="button" id="addBtn">Add Element</button>
+                </div>
+
+            </form>
+            <div class="actions">
+                <div id="messageContainer" class="message-container"></div>
+                <button id="saveBtn">Save</button>
+                <button id="loadBtn">Load</button>
+                <button id="clearBtn">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/eventListenerAssignment.js"></script>
+</body>
+
+</html>

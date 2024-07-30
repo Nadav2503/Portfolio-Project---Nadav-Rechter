@@ -1,0 +1,55 @@
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form-div {
+        padding: 10px;
+        height: 50%;
+    }
+
+    form {
+        padding: 10px;
+        max-width: 100%;
+    }
+
+    .actions {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .actions button {
+        margin: 5px 5px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .form-step h2,
+    .form-step label {
+        font-size: 14px;
+    }
+
+    input[type="number"],
+    input[type="text"],
+    input[type="color"],
+    select,
+    textarea {
+        padding: 8px;
+        margin-top: 3px;
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .shape-option {
+        flex-direction: column;
+
+        input[type="radio"] {
+            margin-bottom: 5px;
+        }
+    }
+}

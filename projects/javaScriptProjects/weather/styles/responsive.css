@@ -1,0 +1,220 @@
+/* Small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+    .weather-details-container {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 box per row */
+        grid-template-rows: repeat(auto, auto);
+        /* Adjust rows based on content */
+    }
+
+    .weather-details-container .weather-box {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .weather-details-container .time-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .time-image {
+        width: 60px;
+        height: 60px;
+    }
+
+    .time-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .time-details .detail-category,
+    .time-details .detail-value {
+        text-align: center;
+    }
+
+    .wind-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .wind-box img,
+    .wind-icon,
+    .time-image {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .forecast-container {
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+
+    .forecast-items {
+        flex-direction: column;
+    }
+
+    .forecast-box,
+    .daily-forecast-item {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
+
+    .return-button {
+        width: 100%;
+    }
+
+    #weatherTime .time-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #weatherTime .time-category {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #weatherTime .time-category .detail-category,
+    #weatherTime .time-category .detail-value {
+        margin-bottom: 0;
+    }
+}
+
+/* Medium devices (tablets, 600px to 992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+    .weather-details-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 boxes per row */
+        grid-template-rows: repeat(2, auto);
+        /* 2 rows */
+    }
+
+    .weather-details-container .weather-box {
+        width: 9rem;
+        height: 9rem;
+    }
+
+    .weather-details-container .time-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .time-image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .wind-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .wind-box img,
+    .wind-icon,
+    .time-image {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .forecast-container {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .forecast-items {
+        flex-direction: row;
+    }
+
+    .forecast-box,
+    .daily-forecast-item {
+        flex: 1 1 calc(50% - 1rem);
+    }
+
+    .return-button {
+        width: auto;
+    }
+
+    #weatherTime .time-details {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #weatherTime .time-category {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #weatherTime .time-category .detail-category,
+    #weatherTime .time-category .detail-value {
+        margin-bottom: 0;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .weather-details-container {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 boxes per row */
+        grid-template-rows: repeat(2, auto);
+        /* 2 rows */
+    }
+
+    .weather-details-container .weather-box {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    .weather-details-container .time-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .time-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .wind-box {
+        width: 18rem;
+        height: 18rem;
+    }
+
+    .wind-box img,
+    .wind-icon,
+    .time-image {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .forecast-container {
+        padding: 2rem;
+        margin: 2rem 0;
+    }
+
+    .forecast-items {
+        flex-direction: row;
+    }
+
+    .forecast-box,
+    .daily-forecast-item {
+        flex: 1 1 calc(25% - 1.25rem);
+    }
+
+    .return-button {
+        width: auto;
+    }
+
+    #weatherTime .time-details {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #weatherTime .time-category {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #weatherTime .time-category .detail-category,
+    #weatherTime .time-category .detail-value {
+        margin-bottom: 0;
+    }
+}

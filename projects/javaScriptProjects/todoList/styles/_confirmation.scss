@@ -1,0 +1,49 @@
+// src/styles/_confirmation.scss
+
+.confirmation-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.confirmation-dialog-content {
+    text-align: center;
+}
+
+.confirmation-button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.confirmation-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#confirmYes {
+    background-color: #4caf50;
+    color: white;
+}
+
+#confirmNo {
+    background-color: #f44336;
+    color: white;
+}
+
+#confirmYes:hover {
+    background-color: #45a049;
+}
+
+#confirmNo:hover {
+    background-color: #c82333;
+}

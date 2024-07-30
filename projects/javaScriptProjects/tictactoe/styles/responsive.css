@@ -1,0 +1,130 @@
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .game-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .board {
+        max-width: 90vw;
+        gap: 3px;
+    }
+
+    .cell {
+        font-size: 20px;
+    }
+
+    .start-game-button,
+    .restart-button,
+    .menu-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .message {
+        font-size: 16px;
+    }
+
+    .leaderboard-container {
+        padding: 15px;
+    }
+
+    .leaderboard-entry {
+        font-size: 16px;
+    }
+
+    .name-inputs {
+        gap: 5px;
+    }
+
+    .name-inputs input {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .start-game-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .menu-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 400px) {
+    .board {
+        max-width: 90vw;
+        gap: 2px;
+    }
+
+    .cell {
+        font-size: 18px;
+    }
+
+    .start-game-button,
+    .restart-button,
+    .menu-button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .leaderboard-entry {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .leaderboard-entry {
+        font-size: 1em;
+        padding: 8px;
+    }
+
+    .name-inputs input {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .start-game-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .menu-options {
+        flex-direction: column;
+        /* Stack buttons vertically on smaller screens */
+        gap: 10px;
+        /* Space between buttons */
+    }
+
+    .menu-button {
+        width: 100%;
+        /* Make buttons full width */
+        max-width: 300px;
+        /* Set a max-width for buttons */
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    #back-to-menu {
+        font-size: 0.9em;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .leaderboard-entry {
+        font-size: 0.9em;
+        padding: 6px;
+    }
+
+    #back-to-menu {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}

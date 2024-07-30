@@ -1,0 +1,50 @@
+/* General Styles */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+}
+
+h1 {
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+
+/* Buttons */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}

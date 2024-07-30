@@ -1,0 +1,72 @@
+/* Styles for Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .todo-table {
+        width: 100%;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+
+    .todo-header {
+        display: flex;
+        flex-wrap: wrap;
+        /* Wrap header content to the next line if needed */
+        justify-content: center;
+        /* Center-align header content */
+        font-size: 0.875rem;
+        /* Adjust font size for tablets */
+        background-color: #4caf50;
+        color: white;
+    }
+
+    .todo-header div {
+        display: flex;
+        align-items: center;
+        /* Center-align content vertically */
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        box-sizing: border-box;
+    }
+
+    .todo-header div .sort-btn {
+        display: none;
+        /* Hide sort buttons in tablet mode */
+    }
+
+    .todo-header:not(.todo-header-description):not(.todo-header-creation-time):not(.todo-header-id) {
+        display: none;
+        /* Hide non-essential headers */
+    }
+
+    .todo-row {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        /* Ensure the rows match the header */
+        gap: 1px;
+        width: 100%;
+    }
+
+    .todo-cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        text-align: center;
+        box-sizing: border-box;
+        word-wrap: break-word;
+        /* Prevent overflow */
+    }
+
+    .todo-cell::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    /* Hide sort buttons text but keep the icons visible */
+    .sort-buttons-container {
+        display: none;
+    }
+}

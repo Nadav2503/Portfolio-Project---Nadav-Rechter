@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-container">
+            <input type="text" placeholder="new task" id="newTaskInput" />
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <div class="sort-buttons-container">
+            <button class="sort-btn" onclick="sortTable('id', 'asc')">ID ↑</button>
+            <button class="sort-btn" onclick="sortTable('id', 'desc')">ID ↓</button>
+            <button class="sort-btn" onclick="sortTable('description', 'asc')">Description ↑</button>
+            <button class="sort-btn" onclick="sortTable('description', 'desc')">Description ↓</button>
+            <button class="sort-btn" onclick="sortTable('creationDate', 'asc')">Creation Time ↑</button>
+            <button class="sort-btn" onclick="sortTable('creationDate', 'desc')">Creation Time ↓</button>
+        </div>
+        <table class="todo-table">
+            <thead>
+                <tr>
+                    <th class="todo-header">Complete</th>
+                    <th class="todo-header">Is Complete</th>
+                    <th class="todo-header todo-header-id">ID
+                        <button class="sort-btn" onclick="sortTable('id', 'asc')">↑</button>
+                        <button class="sort-btn" onclick="sortTable('id', 'desc')">↓</button>
+                    </th>
+                    <th class="todo-header todo-header-description">Description
+                        <button class="sort-btn" onclick="sortTable('description', 'asc')">↑</button>
+                        <button class="sort-btn" onclick="sortTable('description', 'desc')">↓</button>
+                    </th>
+                    <th class="todo-header todo-header-creation-time">Creation Time
+                        <button class="sort-btn" onclick="sortTable('creationDate', 'asc')">↑</button>
+                        <button class="sort-btn" onclick="sortTable('creationDate', 'desc')">↓</button>
+                    </th>
+                    <th class="todo-header">Edit</th>
+                    <th class="todo-header">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="todoListBody">
+            </tbody>
+        </table>
+    </div>
+    <script src="./scripts/main.js" type="module"></script>
+</body>
+
+</html>

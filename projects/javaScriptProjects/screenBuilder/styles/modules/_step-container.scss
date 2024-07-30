@@ -1,0 +1,8 @@
+.form-step {
+    display: none;
+    /* Only one active at a time */
+}
+
+.form-step.active {
+    display: block;
+}

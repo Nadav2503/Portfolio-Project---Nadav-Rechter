@@ -1,0 +1,84 @@
+.forecast-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.forecast-container h3 {
+    text-align: center;
+    margin: 0;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.forecast-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.forecast-box {
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 0.6rem 1.2rem rgba(0, 0, 0, 0.1);
+    border: 0.1rem solid #ccc;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 12rem;
+    flex: 1 1 calc(25% - 2rem);
+    max-width: calc(25% - 2rem);
+}
+
+.daily-forecast-item {
+    flex: 1 1 calc(20% - 2rem);
+    max-width: calc(20% - 2rem);
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.forecast-icon {
+    max-width: 6rem;
+    height: auto;
+}
+
+.forecast-description {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.forecast-description .hour,
+.forecast-description .temperature,
+.forecast-description .desc,
+.forecast-description .date,
+.forecast-description .temp {
+    display: block;
+}
+
+.forecast-description .hour,
+.forecast-description .date {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #1f282c;
+}
+
+.forecast-description .temperature,
+.forecast-description .temp {
+    font-size: 1.2rem;
+    color: #FF5722;
+    font-weight: bold;
+}
+
+.forecast-description .desc {
+    color: #64B5F6;
+    font-weight: bold;
+}

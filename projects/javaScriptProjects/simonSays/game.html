@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Game</title>
+    <link rel="stylesheet" href="./styles/game.css">
+    <link rel="stylesheet" href="./styles/game2.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Simon Says</h1>
+        </header>
+        <button class="menu-button" id="startGame">Start Game</button>
+        <div class="score">Score: 0</div>
+        <div class="message" id="gameMessage"></div>
+        <div class="simon-board">
+            <div class="center-circle">
+                <div class="simon-text">Simon</div>
+                <div class="microphone">🎤</div>
+            </div>
+            <div class="segment top-left" data-color="green"></div>
+            <div class="segment top-right" data-color="red"></div>
+            <div class="segment bottom-left" data-color="yellow"></div>
+            <div class="segment bottom-right" data-color="blue"></div>
+        </div>
+        <div class="button-container">
+            <button class="menu-button" id="viewLeaderboard">View Leaderboard</button>
+            <button class="menu-button" id="returnToMenu">Return to Menu</button>
+        </div>
+    </div>
+
+    <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>

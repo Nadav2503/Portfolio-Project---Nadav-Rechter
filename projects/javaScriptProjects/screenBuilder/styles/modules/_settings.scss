@@ -1,0 +1,13 @@
+#listSettings.hidden,
+#headerSettings.hidden,
+#tableSettings.hidden,
+#shapeSettings.hidden {
+    display: none;
+}
+
+#listSettings.visible,
+#headerSettings.visible,
+#tableSettings.visible,
+#shapeSettings.visible {
+    display: block;
+}

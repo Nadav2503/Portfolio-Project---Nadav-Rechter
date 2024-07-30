@@ -1,0 +1,53 @@
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    font-size: 1rem;
+    /* Use rem for scalability */
+    box-sizing: border-box;
+    /* Ensure full width usage */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.sort-btn {
+    border: none;
+    background: none;
+    color: #333;
+    cursor: pointer;
+    font-size: 1rem;
+    /* Use rem for scalability */
+    margin-left: 5px;
+    padding: 0;
+}
+
+.sort-buttons-container {
+    display: none;
+}
+
+.sort-btn:hover {
+    color: #007bff;
+}
+
+.todo-edit {
+    color: #001aff;
+    cursor: pointer;
+}
+
+.todo-edit:hover {
+    text-decoration: underline;
+}
+
+.todo-delete {
+    color: #d41b2e;
+    cursor: pointer;
+}
+
+.todo-delete:hover {
+    text-decoration: underline;
+}

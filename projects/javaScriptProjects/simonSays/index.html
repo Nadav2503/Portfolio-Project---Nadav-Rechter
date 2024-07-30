@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Says Menu</title>
+    <link rel="stylesheet" href="./styles/menu.css">
+</head>
+
+<body>
+    <div class="menu-container">
+        <h1>Simon Says Game Menu</h1>
+        <label for="playerName">Enter Your Name:</label>
+        <input type="text" id="playerName" placeholder="Your Name" required>
+        <label for="difficultyLevel">Select Difficulty Level:</label>
+        <select id="difficultyLevel">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="impossible">Impossible</option>
+        </select>
+        <button id="startGame">Start Game</button>
+        <button id="viewLeaderboard">View Leaderboard</button>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script src="./scripts/menuScript.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+/* General styles for time-box */
+.time-box {
+    width: 18rem;
+    /* Same width as wind box */
+    height: 18rem;
+    /* Same height as wind box */
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.2rem solid #ddd;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Slightly transparent background for readability */
+    text-align: center;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-size: cover;
+    /* Ensure the background image covers the box */
+    background-position: center;
+    /* Center the background image */
+    background-repeat: no-repeat;
+    /* Prevent image from repeating */
+}
+
+/* Time image styles */
+.time-image {
+    display: none;
+    /* Hide this image as it's no longer needed */
+}
+
+/* Details container styles */
+.time-details {
+    display: flex;
+    flex-direction: column;
+    /* Stack items vertically */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    /* Allow positioning relative to this element */
+}
+
+/* Time category styles */
+.time-category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem 0;
+}
+
+/* Category and value styles */
+.detail-category,
+.detail-value {
+    font-weight: bold;
+    width: auto;
+    /* Adjust width to fit content */
+    overflow-wrap: break-word;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.detail-value {
+    margin-left: 0.5rem;
+    /* Space between category and value */
+}
+
+/* Specific adjustments for time category */
+.time-category .detail-category {
+    margin-right: 0.5rem;
+    /* Space between category and value */
+}

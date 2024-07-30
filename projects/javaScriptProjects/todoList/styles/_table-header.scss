@@ -1,0 +1,25 @@
+.todo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.todo-header {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.todo-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.todo-row.completed {
+    background-color: #ffdddd;
+}
+
+.todo-row:hover {
+    background-color: #f1f1f1;
+}

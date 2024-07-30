@@ -1,0 +1,326 @@
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.todo-header {
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.todo-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.todo-row.completed {
+  background-color: #ffdddd;
+}
+
+.todo-row:hover {
+  background-color: #f1f1f1;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  font-size: 1rem;
+  /* Use rem for scalability */
+  box-sizing: border-box;
+  /* Ensure full width usage */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.sort-btn {
+  border: none;
+  background: none;
+  color: #333;
+  cursor: pointer;
+  font-size: 1rem;
+  /* Use rem for scalability */
+  margin-left: 5px;
+  padding: 0;
+}
+
+.sort-buttons-container {
+  display: none;
+}
+
+.sort-btn:hover {
+  color: #007bff;
+}
+
+.todo-edit {
+  color: #001aff;
+  cursor: pointer;
+}
+
+.todo-edit:hover {
+  text-decoration: underline;
+}
+
+.todo-delete {
+  color: #d41b2e;
+  cursor: pointer;
+}
+
+.todo-delete:hover {
+  text-decoration: underline;
+}
+
+.confirmation-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.confirmation-dialog-content {
+  text-align: center;
+}
+
+.confirmation-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.confirmation-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#confirmYes {
+  background-color: #4caf50;
+  color: white;
+}
+
+#confirmNo {
+  background-color: #f44336;
+  color: white;
+}
+
+#confirmYes:hover {
+  background-color: #45a049;
+}
+
+#confirmNo:hover {
+  background-color: #c82333;
+}
+
+/* Cell Styles */
+.todo-cell {
+  flex: 1 1 auto;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.todo-cell.completed {
+  text-decoration: line-through;
+  color: #ff0000;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input[type=text] {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+  flex: 1;
+  max-width: 300px;
+  font-size: 1rem;
+  /* Use rem for scalability */
+}
+
+/* Styles for Tablets */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .todo-table {
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+  }
+  .todo-header {
+    display: flex;
+    flex-wrap: wrap;
+    /* Wrap header content to the next line if needed */
+    justify-content: center;
+    /* Center-align header content */
+    font-size: 0.875rem;
+    /* Adjust font size for tablets */
+    background-color: #4caf50;
+    color: white;
+  }
+  .todo-header div {
+    display: flex;
+    align-items: center;
+    /* Center-align content vertically */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+  }
+  .todo-header div .sort-btn {
+    display: none;
+    /* Hide sort buttons in tablet mode */
+  }
+  .todo-header:not(.todo-header-description):not(.todo-header-creation-time):not(.todo-header-id) {
+    display: none;
+    /* Hide non-essential headers */
+  }
+  .todo-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    /* Ensure the rows match the header */
+    gap: 1px;
+    width: 100%;
+  }
+  .todo-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-sizing: border-box;
+    word-wrap: break-word;
+    /* Prevent overflow */
+  }
+  .todo-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  /* Hide sort buttons text but keep the icons visible */
+  .sort-buttons-container {
+    display: none;
+  }
+}
+/* Styles for Mobile Devices */
+@media (max-width: 768px) {
+  .todo-table {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+  }
+  .todo-header {
+    display: none;
+    /* Hide the original header on mobile */
+  }
+  /* Show the sort buttons container only in mobile view */
+  .sort-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+    /* Center the sort buttons container */
+  }
+  .sort-btn {
+    margin: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    /* Adjust font size for mobile */
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+  }
+  .sort-btn:hover {
+    background-color: #45a049;
+  }
+  #todoListBody {
+    width: 100%;
+  }
+  .todo-row {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .todo-cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5rem;
+    border: none;
+    text-align: center;
+    position: relative;
+  }
+  .todo-cell::before {
+    content: attr(data-label);
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  .todo-cell {
+    border-bottom: 1px solid #ddd;
+  }
+  .todo-row:last-child .todo-cell {
+    border-bottom: none;
+  }
+  /* Centering table content vertically if needed */
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    /* Full viewport height */
+    justify-content: center;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}/*# sourceMappingURL=main.css.map */

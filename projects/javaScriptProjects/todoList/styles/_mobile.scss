@@ -1,0 +1,89 @@
+/* Styles for Mobile Devices */
+@media (max-width: 768px) {
+    .todo-table {
+        display: flex;
+        width: 100%;
+        overflow-x: hidden;
+        /* Prevent horizontal scrolling */
+    }
+
+    .todo-header {
+        display: none;
+        /* Hide the original header on mobile */
+    }
+
+    /* Show the sort buttons container only in mobile view */
+    .sort-buttons-container {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        justify-content: center;
+        /* Center the sort buttons container */
+    }
+
+    .sort-btn {
+        margin: 5px;
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+        /* Adjust font size for mobile */
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .sort-btn:hover {
+        background-color: #45a049;
+    }
+
+    #todoListBody {
+        width: 100%;
+    }
+
+    .todo-row {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+
+    .todo-cell {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0.5rem;
+        border: none;
+        text-align: center;
+        position: relative;
+    }
+
+    .todo-cell::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .todo-cell {
+        border-bottom: 1px solid #ddd;
+    }
+
+    .todo-row:last-child .todo-cell {
+        border-bottom: none;
+    }
+
+    /* Centering table content vertically if needed */
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100vh;
+        /* Full viewport height */
+        justify-content: center;
+    }
+}

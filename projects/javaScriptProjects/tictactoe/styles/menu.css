@@ -1,0 +1,40 @@
+/* Menu Styles */
+.menu-container {
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-options {
+    display: flex;
+    flex-direction: row;
+    /* Default to row layout for desktop */
+    gap: 10px;
+    /* Space between buttons */
+    margin-top: 20px;
+}
+
+.menu-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.menu-button:hover {
+    background-color: #0056b3;
+}
