@@ -1,0 +1,26 @@
+.left {
+    .contact {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 10vh;
+        margin-bottom: 2vh;
+
+        // האפשרויות ליצירת קשר
+        div {
+            margin: auto 2.5vw;
+            width: 4.5vw;
+            height: 7vh;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FDBD03 0% 0% no-repeat padding-box;
+            box-shadow: 0px 3px 6px #0000;
+
+            img {
+                width: 70%;
+                height: 70%;
+            }
+        }
+    }
+}

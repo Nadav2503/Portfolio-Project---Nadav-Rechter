@@ -1,0 +1,103 @@
+#thirdArea {
+    padding: 2rem;
+    background-color: $thirdArea-bg-color;
+    padding-top: 100px;
+
+    .containerOfProject {
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .beforeTheProject {
+            text-align: center;
+            margin-bottom: 2rem;
+
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1rem;
+                color: $green-theme; // Main green color for headings
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                color: $dark-green; // Dark green for text
+            }
+
+            .knowledge {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center; // Center icons horizontally
+                gap: 20px; // Space between icons
+
+                img {
+                    width: 60px; // Set consistent width
+                    height: 60px; // Set consistent height
+                    object-fit: contain; // Maintain aspect ratio
+                    border-radius: 4px; // Optional: rounded corners
+                    background-color: #fff; // Optional: background color for better visibility
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional: shadow for a polished look
+                }
+            }
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; // Space between project boxes
+            justify-content: center; // Center the cards
+
+            .col-lg-4 {
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 30%; // Adjust width based on number of columns
+
+                .card {
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%; // Ensure the card fills the column
+
+                    .card-body {
+                        flex: 1; // Allow the body to grow and take available space
+                        display: flex;
+                        flex-direction: column;
+                        padding: 1rem; // Adjust as needed
+                        background-color: white; // White background for card body
+
+                        h5 {
+                            font-size: 1.2rem;
+                            margin-bottom: 1rem;
+                            color: $green-theme; // Main green color for titles
+                        }
+
+                        p {
+                            font-size: 1rem;
+                            margin-bottom: 1rem;
+                            color: $dark-green; // Dark green for card text
+                        }
+
+                        .btn-container {
+                            margin-top: auto; // Push the button to the bottom
+                            display: flex;
+                            justify-content: center; // Center the button horizontally
+
+                            .btn {
+                                background-color: $green-theme; // Main green color for button
+                                color: white; // White text on button
+                                border: none;
+
+                                &:hover {
+                                    background-color: $dark-green; // Dark green on hover
+                                }
+                            }
+                        }
+                    }
+
+                    .card-img-top {
+                        height: 150px; // Fixed height
+                        object-fit: cover; // Ensure image covers area
+                    }
+                }
+            }
+        }
+    }
+}

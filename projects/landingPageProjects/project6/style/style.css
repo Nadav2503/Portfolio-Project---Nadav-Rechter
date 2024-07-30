@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+.container .right {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.container .left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+}
+
+.right .lineTop {
+  width: 45%;
+  height: 1vh;
+  background: #FDBD03 0% 0% no-repeat padding-box;
+}
+.right .pictureContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding-top: 7vh;
+}
+.right .pictureContainer .picturePhone {
+  width: 70%;
+  height: 80%;
+}
+.right .pictureContainer .picturePhone img {
+  width: 100%;
+  height: 100%;
+}
+
+.left .whatsapp {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: end;
+  margin-top: 4vh;
+  width: 90%;
+}
+.left .whatsapp div {
+  width: 4.5vw;
+  height: 7vh;
+  background: #FDBD03 0% 0% no-repeat padding-box;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.left .whatsapp div img {
+  width: 70%;
+  height: 70%;
+}
+.left .titleFormContainer {
+  display: flex;
+  flex-direction: column;
+}
+.left .lineBottom {
+  width: 100%;
+  height: 1vh;
+  background: #FDBD03 0% 0% no-repeat padding-box;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.left .titleFormContainer {
+  margin-top: 4vh;
+}
+.left .titleFormContainer .titleContainer {
+  width: 80%;
+  margin-bottom: 4vh;
+}
+.left .titleFormContainer .titleContainer h1 {
+  width: 100%;
+  text-align: right;
+  font: normal normal 900 66px/97px Heebo;
+  color: #FDBD03;
+}
+.left .titleFormContainer .titleContainer p {
+  width: 70%;
+  text-align: right;
+  font: normal normal normal 20px/29px Heebo;
+  color: #020253;
+}
+.left .titleFormContainer .formContainer {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.left .titleFormContainer .formContainer form {
+  width: 100%;
+}
+.left .titleFormContainer .formContainer form .formControl-labelField {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.left .titleFormContainer .formContainer form .formControl-labelField .formControl {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+}
+.left .titleFormContainer .formContainer form .formControl-labelField .formControl input {
+  background: #E5EEFF 0% 0% no-repeat padding-box;
+  border: 0;
+  border-bottom: 4px solid #FDBD03;
+  height: 4vh;
+}
+.left .titleFormContainer .formContainer form .formControl-labelField .formControl label {
+  text-align: right;
+  font: normal normal bold 16px/24px Heebo;
+  color: #2C2C2C;
+}
+.left .titleFormContainer .formContainer form .formControl {
+  display: flex;
+  flex-direction: column;
+}
+.left .titleFormContainer .formContainer form .formControl label {
+  text-align: right;
+  font: normal normal bold 16px/24px Heebo;
+  color: #2C2C2C;
+}
+.left .titleFormContainer .formContainer form .formControl textarea {
+  background: #E5EEFF 0% 0% no-repeat padding-box;
+  border: 0;
+  border-bottom: 4px solid #FDBD03;
+  height: 14vh;
+}
+.left .titleFormContainer .formContainer form .formControlSubmit {
+  margin-top: 5vh;
+  margin-bottom: 10vh;
+}
+.left .titleFormContainer .formContainer form .formControlSubmit input {
+  background: #FDBD03 0% 0% no-repeat padding-box;
+  text-align: center;
+  font: normal normal bold 22px/30px Heebo;
+  letter-spacing: 0.33px;
+  color: #000000;
+  border: 0;
+  width: 25%;
+  height: 4vh;
+}
+
+.left .contact {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 10vh;
+  margin-bottom: 2vh;
+}
+.left .contact div {
+  margin: auto 2.5vw;
+  width: 4.5vw;
+  height: 7vh;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FDBD03 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0);
+}
+.left .contact div img {
+  width: 70%;
+  height: 70%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .container .right {
+    width: 100vw;
+  }
+  .container .right .lineTop {
+    width: 90%;
+  }
+  .container .right .pictureContainer {
+    padding-top: 4vh;
+  }
+  .container .left {
+    width: 100vw;
+  }
+  .container .left .whatsapp {
+    display: none;
+  }
+  .container .left .titleFormContainer {
+    width: 100%;
+  }
+  .container .left .titleFormContainer .titleContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .left .titleFormContainer .titleContainer h1 {
+    width: 100%;
+    text-align: center;
+    font: normal normal 900 40px/59px Heebo;
+    color: #FDBD03;
+  }
+  .container .left .titleFormContainer .titleContainer p {
+    width: 80%;
+    text-align: center;
+    font: normal normal normal 15px/22px Heebo;
+    color: #020253;
+  }
+  .container .left .titleFormContainer .formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .left .titleFormContainer .formContainer form {
+    width: 90%;
+  }
+  .container .left .titleFormContainer .formContainer form .formControl-labelField {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .container .left .titleFormContainer .formContainer form .formControl-labelField .formControl {
+    width: 100%;
+  }
+  .container .left .titleFormContainer .formContainer form .formControl-labelField .formControl label {
+    text-align: right;
+    font: normal normal bold 10px/14px Heebo;
+    color: #2C2C2C;
+  }
+  .container .left .titleFormContainer .formContainer form .formControlSubmit {
+    margin-top: 1vh;
+    margin-bottom: 4vh;
+  }
+  .container .left .titleFormContainer .formContainer form .formControlSubmit input {
+    text-align: center;
+    font: normal normal bold 15px/21px Heebo;
+    letter-spacing: 0.23px;
+    color: #000000;
+    width: 100%;
+  }
+  .container .contact {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .container .contact div {
+    margin: auto 2.5vw;
+    width: 12%;
+    height: 60%;
+    border-radius: 50%;
+  }
+  .container .contact div img {
+    width: 70%;
+    height: 70%;
+  }
+}/*# sourceMappingURL=style.css.map */

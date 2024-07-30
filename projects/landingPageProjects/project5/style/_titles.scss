@@ -1,0 +1,36 @@
+.container-fluid {
+
+    // כותרת ופסקה
+    .titleContainer {
+        h1 {
+            text-align: center;
+            font: normal normal bold 61px/80px Assistant;
+            color: #0EE1DA;
+        }
+
+        p {
+            text-align: center;
+            font: normal normal normal 20px/26px Assistant;
+            color: #F9F9F9;
+        }
+    }
+
+    // ----------------------------------------------------------------------------
+
+    // כותרת ופסקה בתוך הטופס
+    .formContainer-title {
+        .title-container {
+            h1 {
+                text-align: center;
+                font: normal normal bold 35px/46px Assistant;
+                color: #FFFFFF;
+            }
+
+            p {
+                text-align: center;
+                font: normal normal normal 20px/26px Assistant;
+                color: #F9F9F9;
+            }
+        }
+    }
+}

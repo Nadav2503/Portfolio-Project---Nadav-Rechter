@@ -1,0 +1,29 @@
+#firstArea {
+    padding: 2rem;
+    background-color: $firstArea-bg-color;
+    text-align: center;
+    padding-top: 100px;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: $dark-green;
+    }
+
+    p {
+        font-size: 1.2rem;
+        line-height: 1.5;
+        color: $text-color-primary;
+    }
+
+    .knowledge {
+        margin-top: 2rem;
+
+        img {
+            width: 60px; // Set width to 60px
+            height: 60px; // Set height to 60px
+            object-fit: contain; // Ensure aspect ratio is maintained
+            margin: 0 10px;
+        }
+    }
+}

@@ -1,0 +1,31 @@
+.right {
+
+    // קו עליון
+    .lineTop {
+        width: 45%;
+        height: 1vh;
+        background: #FDBD03 0% 0% no-repeat padding-box;
+    }
+
+    // ----------------------------------------------------------------------------------------------------------- 
+
+    // תמונת רקע
+    .pictureContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding-top: 7vh;
+
+        .picturePhone {
+            width: 70%;
+            height: 80%;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

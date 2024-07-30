@@ -1,0 +1,47 @@
+.left {
+
+    //  תמונת וואטסאפ
+    .whatsapp {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: end;
+        margin-top: 4vh;
+        width: 90%;
+
+        div {
+            width: 4.5vw;
+            height: 7vh;
+            background: #FDBD03 0% 0% no-repeat padding-box;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 70%;
+                height: 70%;
+            }
+        }
+    }
+
+    // ----------------------------------------------------------------------------------------------------------- 
+
+    // עימוד טופס
+    .titleFormContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // ----------------------------------------------------------------------------------------------------------- 
+
+    // קו תחתון
+    .lineBottom {
+        width: 100%;
+        height: 1vh;
+        background: #FDBD03 0% 0% no-repeat padding-box;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}

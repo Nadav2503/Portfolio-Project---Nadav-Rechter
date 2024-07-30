@@ -1,0 +1,169 @@
+/* אתחול */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.titleContainer {
+    background-image: url(./../images/triangle.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* כותרת ופסקה */
+.titleContainer .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+
+}
+
+.titleContainer .title>h1 {
+    width: 80%;
+    font: normal normal bold 86px/113px Assistant;
+    color: #D3E10E;
+    text-align: center;
+}
+
+.titleContainer .title>p {
+    width: 80%;
+    font: normal normal normal 20px/26px Assistant;
+    color: #F9F9F9;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* טופס */
+.formContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30vh;
+}
+
+.formContainer>form {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 20px;
+    justify-content: center;
+}
+
+.formControl {
+    display: flex;
+    flex-direction: column;
+}
+
+/* שם השדה + שדה */
+.formControl>.form-control {
+    width: 25vw;
+    height: 4vh;
+    background: #F6F6F6 0% 0% no-repeat padding-box;
+    border: 0;
+    border-bottom: 4px solid #D3E10E;
+}
+
+.formControl>.form-label {
+    font: normal normal bold 16px/21px Assistant;
+    color: #011560;
+}
+
+/* כפתור */
+.formControlSubmit {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 1px;
+}
+
+.formControlSubmit>input {
+    width: 10vw;
+    height: 4vh;
+    text-align: center;
+    font: normal normal bold 16px/21px Assistant;
+    color: #011560;
+    border: 0;
+    background: #D3E10E 0% 0% no-repeat padding-box;
+}
+
+/* ----------------------------------------------------------------------------- */
+
+/* רספונסיביות */
+/* מצב מובייל */
+@media (max-width:768px) {
+
+    /* כותרת ופסקה */
+    .titleContainer {
+        height: 50vh;
+    }
+
+    .titleContainer .title>h1 {
+        text-align: center;
+        font: normal normal bold 30px/40px Assistant;
+        color: #D3E10E;
+    }
+
+    .titleContainer .title>p {
+        text-align: center;
+        font: normal normal normal 15px/19px Assistant;
+        color: #FFFFFF;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+
+    /* טןפס */
+    .formContainer {
+        height: 50vh;
+    }
+
+    .formContainer>form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* שם השדה + שדה */
+    .formContainer form>.formControl {
+        width: 80%;
+        display: flex;
+    }
+
+    .formContainer form .formControl>.form-control {
+        width: 100%;
+    }
+
+    .formContainer form .formControl>.form-label {
+        font: normal normal bold 10px/14px Heebo;
+        color: #011560;
+    }
+
+    /* כפתור */
+    .formContainer form>.formControlSubmit {
+        display: flex;
+        margin-bottom: 1px;
+        width: 100%;
+    }
+
+    .formControlSubmit>input {
+        width: 80%;
+        height: 10%;
+        font: normal normal bold 16px/21px Assistant;
+        color: #011560;
+        border: 0;
+        background: #D3E10E 0% 0% no-repeat padding-box;
+    }
+}

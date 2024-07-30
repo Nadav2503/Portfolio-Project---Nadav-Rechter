@@ -1,0 +1,135 @@
+// רספונסיביות
+// מצב מובייל
+@media (max-width:768px) {
+
+    //היפוך צורה
+    .container {
+        display: flex;
+        flex-direction: column;
+
+        // ----------------------------------------------------------------------------------------------------------- 
+
+        // צד ימני של המסך
+        .right {
+            width: 100vw;
+
+            .lineTop {
+                width: 90%;
+            }
+
+            .pictureContainer {
+                padding-top: 4vh;
+            }
+        }
+
+        // ----------------------------------------------------------------------------------------------------------- 
+
+        // צד שמאלי של המסך
+        .left {
+            width: 100vw;
+
+            .whatsapp {
+                display: none;
+            }
+
+            // ----------------------------------------------------------------------------------------------------------- 
+
+            // טופס + כותרת ופסקה
+            .titleFormContainer {
+                width: 100%;
+
+                // כותרת ופסקה 
+                .titleContainer {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+
+                    h1 {
+                        width: 100%;
+                        text-align: center;
+                        font: normal normal 900 40px/59px Heebo;
+                        color: #FDBD03;
+                    }
+
+                    p {
+                        width: 80%;
+                        text-align: center;
+                        font: normal normal normal 15px/22px Heebo;
+                        color: #020253;
+                    }
+                }
+
+                // ----------------------------------------------------------------------------------------------------------- 
+
+                // טופס
+                .formContainer {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    form {
+                        width: 90%;
+
+                        // שם השדה
+                        .formControl-labelField {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+
+                            .formControl {
+                                width: 100%;
+
+                                label {
+                                    text-align: right;
+                                    font: normal normal bold 10px/14px Heebo;
+                                    color: #2C2C2C;
+                                }
+                            }
+                        }
+
+                        // ----------------------------------------------------------------------------------------------------------- 
+
+                        // כפתור
+                        .formControlSubmit {
+                            margin-top: 1vh;
+                            margin-bottom: 4vh;
+
+                            input {
+                                text-align: center;
+                                font: normal normal bold 15px/21px Heebo;
+                                letter-spacing: 0.23px;
+                                color: #000000;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ----------------------------------------------------------------------------------------------------------- 
+
+        // יצירת קשר
+        .contact {
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                margin: auto 2.5vw;
+                width: 12%;
+                height: 60%;
+                border-radius: 50%;
+
+                img {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+        }
+    }
+}

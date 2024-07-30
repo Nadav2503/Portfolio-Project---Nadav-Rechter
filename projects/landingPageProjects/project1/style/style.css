@@ -1,0 +1,180 @@
+/* אתחול */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+.container .formContainer {
+    background: #1A1A1AD4 0% 0% no-repeat padding-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 30vw;
+    height: 80%;
+    z-index: 3;
+    top: 10%;
+    right: 15%;
+    position: absolute;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* כותרת ופסקה */
+.container .formContainer>.titleContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .formContainer .titleContainer>h1 {
+    font: normal normal 900 36px/53px Heebo;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+    text-align: right;
+    margin-top: 7vh;
+    width: 90%;
+}
+
+.container .formContainer .titleContainer>p {
+    font: normal normal normal 20px/29px Heebo;
+    color: #F9F9F9;
+    margin-bottom: 30px;
+    text-align: right;
+    width: 90%;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* טופס */
+.container .formContainer>form {
+    width: 70%;
+}
+
+/* שדה + שם השדה */
+.container .formContainer .formControl {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.container .formContainer .formControl>label {
+    font: normal normal bold 16px/24px Heebo;
+    color: #FFFFFF;
+}
+
+.container .formContainer .formControl>input {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #D31C75;
+    width: 100%;
+    height: 4vh;
+}
+
+/* כפתור */
+.container .formContainer .formControlSubmit>input {
+    background: #D31C75 0% 0% no-repeat padding-box;
+    width: 40%;
+    height: 6vh;
+    font: normal normal bold 22px/30px Heebo;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-bottom: 10vh;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* הרקע */
+.container>.imgContainer {
+    width: 100%;
+    height: 60%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container .imgContainer>img {
+    width: 100%;
+    height: 80%;
+    display: block;
+    object-fit: stretch;
+}
+
+/* --------------------------------------------------------------------------- */
+
+/* רספונסיביות */
+/* מצב מובייל */
+@media (max-width:768px) {
+
+    /* היפוך צורה */
+    .container {
+        height: 100vh;
+    }
+
+    .container .formContainer {
+        background: #1A1A1AD4 0% 0% no-repeat padding-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 80vw;
+        left: 0;
+        right: 0;
+        margin: 10px auto;
+    }
+
+    /* --------------------------------------------------------------------------- */
+
+    /* כותרת ופסקה */
+    .container .formContainer>.titleContainer {
+        width: 70%;
+    }
+
+    .container .formContainer .titleContainer>h1 {
+        text-align: center;
+        font: normal normal 900 25px/30px Heebo;
+        color: #FFFFFF;
+    }
+
+    .container .formContainer .titleContainer>p {
+        text-align: center;
+        font: normal normal normal 15px/22px Heebo;
+        color: #F9F9F9;
+    }
+
+    /* --------------------------------------------------------------------------- */
+
+    /* טופס */
+    .container .formControl>label {
+        text-align: right;
+        font: normal normal bold 14px/21px Heebo;
+        color: #FFFFFF;
+    }
+
+    .container .formContainer .formControlSubmit>input {
+        width: 40%;
+        text-align: center;
+        font: normal normal bold 15px/20px Heebo;
+        letter-spacing: 0.23px;
+        color: #FFFFFF;
+    }
+
+    /* --------------------------------------------------------------------------- */
+
+    /* רקע */
+    .container .imgContainer>img {
+        width: 100%;
+        height: 50vh;
+        display: block;
+        object-fit: stretch;
+    }
+}

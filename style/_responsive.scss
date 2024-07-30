@@ -1,0 +1,110 @@
+// Mobile First Styles
+
+// Header
+header {
+    .navbar-toggler {
+        border: none;
+        background: $header-background-color;
+
+        img {
+            height: 30px;
+        }
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
+// First Area
+#firstArea {
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+}
+
+// Second Area
+#secondArea {
+    .secondArea {
+        img {
+            width: 120px;
+        }
+
+        p {
+            font-size: 1rem;
+        }
+    }
+}
+
+// Third Area
+#thirdArea {
+    .containerOfProject {
+        .row {
+
+            .box1,
+            .box2,
+            .box3,
+            .box4,
+            .box5,
+            .box6,
+            .box7 {
+                max-width: 100%;
+                margin: 0;
+
+                .card {
+                    .card-body {
+                        h5 {
+                            font-size: 1rem;
+                        }
+
+                        p {
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .card-img-top {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Fourth Area
+#fourthArea {
+    form {
+        .form-control {
+
+            input[type="text"],
+            input[type="email"],
+            textarea {
+                font-size: 0.9rem;
+            }
+        }
+
+        .form-control-btn {
+            input[type="submit"] {
+                font-size: 0.9rem;
+            }
+        }
+    }
+
+    .findMe {
+        a {
+            margin: 0 5px;
+
+            img {
+                width: 30px;
+            }
+
+            .findMe-name {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}

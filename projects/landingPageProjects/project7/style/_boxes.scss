@@ -1,0 +1,54 @@
+// שירותים של האתר
+.section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
+    // כרטיס
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #F8F8F8 0% 0% no-repeat padding-box;
+        padding: 10px;
+        width: 22%;
+        height: 35vh;
+
+        // עימוד הכטיס
+        .card-body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            //  -------------------------------------------------------------------------------------------------------------------- 
+
+            // חלקי הכרטיס
+
+            // תמונה של השירות
+            .card-img-top {
+                width: 50px;
+                height: 50px;
+            }
+
+            // כותרת
+            h1 {
+                text-align: right;
+                font: normal normal 900 30px/44px Heebo;
+                color: #0EE1E1;
+            }
+
+            // פסקה
+            p {
+                text-align: center;
+                font: normal normal normal 15px/22px Heebo;
+                color: #000000;
+            }
+        }
+    }
+}

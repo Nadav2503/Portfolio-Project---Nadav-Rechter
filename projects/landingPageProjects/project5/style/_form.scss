@@ -1,0 +1,92 @@
+.container-fluid {
+    .formContainer-title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        // כותרת ופסקה
+        .title-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 70%;
+            padding-bottom: 30px;
+
+            h1 {
+                text-align: center;
+                font: normal normal bold 35px/46px Assistant;
+                color: #FFFFFF;
+            }
+
+            p {
+                text-align: center;
+                font: normal normal normal 20px/26px Assistant;
+                color: #F9F9F9;
+            }
+        }
+
+        // ----------------------------------------------------------------------------
+
+        // טופס
+        .form-container {
+            direction: rtl;
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            form {
+                width: 90%;
+
+                // שם השדה + שדה
+                .formControl {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 3vh;
+
+                    label {
+                        text-align: right;
+                        font: normal normal bold 16px/24px Heebo;
+                        color: #0EE1DA;
+                    }
+
+                    input {
+                        background: #E5EEFF 0% 0% no-repeat padding-box;
+                        border: 0;
+                        border-bottom: 4px solid #0EE1DA;
+                    }
+
+                    // שדה לכתיבת טקסט גדול
+                    textarea {
+                        background: #E5EEFF 0% 0% no-repeat padding-box;
+                        border: 0;
+                        border-bottom: 4px solid #0EE1DA;
+                        height: 170px;
+                        resize: none;
+                    }
+                }
+
+                // כפתור
+                .formControlSubmit {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    input {
+                        width: 100%;
+                        background: #0EE1DA 0% 0% no-repeat padding-box;
+                        height: 5vh;
+                        text-align: right;
+                        font: normal normal bold 24px/33px Heebo;
+                        letter-spacing: 0.36px;
+                        color: #011560;
+                    }
+                }
+            }
+        }
+    }
+}

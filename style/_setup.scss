@@ -1,0 +1,122 @@
+// Global Variables
+$header-background-color: #004d00;
+$firstArea-bg-color: #e6f9e6;
+$secondArea-bg-color: #ccffcc;
+$thirdArea-bg-color: #F5F5DC;
+$fourthArea-bg-color: #c9f5c9;
+
+$green-theme: #4CAF50; // Main green color
+$beige-bg-color: #F5F5DC; // Beige background
+$dark-green: #388E3C; // Dark green for accents and buttons
+
+$text-color: #00f; // Text color for .findMe-name
+$text-color-primary: #639;
+$form-background: #F9F9F9; // Background color for the form
+$label-color: #333; // Color for labels
+$radio-border: #666; // Border color for radio buttons
+$radio-checked: #4CAF50; // Color when radio button is checked
+$button-background: $radio-checked; // Button color
+$button-hover: darken($button-background, 10%); // Button hover color
+$text-color-form: #666;
+
+$header-color: white; // Header text color
+$link-color: #66ff66; // Link color
+$link-hover-color: darken($link-color, 10%); // Link hover color
+$font-family: "Arial", sans-serif;
+
+// Global Styles
+body {
+    font-family: $font-family;
+    color: $text-color;
+    background-color: $thirdArea-bg-color;
+    margin: 0;
+    direction: rtl; // RTL Direction
+    text-align: right;
+    /* Adjust according to your header's height */
+}
+
+a {
+    color: $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $link-hover-color;
+    }
+}
+
+header {
+    background-color: $header-background-color;
+    color: $header-color;
+    position: fixed;
+    /* or position: fixed; if you want it to be fixed at the top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /* Ensures it stays above other content */
+    /* Adjust as needed to match your design */
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1rem;
+
+        .navbar-brand {
+            color: $header-color;
+
+            img {
+                height: 50px;
+                margin-right: 5px;
+            }
+        }
+
+        .navbar-toggler {
+            border: none;
+            background: $header-background-color;
+
+            img {
+                height: 30px;
+            }
+        }
+
+        .collapse {
+            flex-grow: 1;
+        }
+
+        .navbar-nav {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center; // Center items in the navbar
+
+            .nav-link {
+                color: $header-color;
+
+                &:hover {
+                    color: cyan;
+                }
+            }
+        }
+    }
+}
+
+.upL {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; // Adjusted for RTL
+    background-color: $header-background-color;
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    .up {
+        width: 30px;
+        height: 30px;
+        display: block;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
