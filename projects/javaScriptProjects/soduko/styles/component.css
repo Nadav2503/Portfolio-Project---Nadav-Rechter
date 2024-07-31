@@ -1,0 +1,55 @@
+/* components.css */
+.grid-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    background-color: #fff;
+    user-select: none;
+    transition: background-color 0.3s ease;
+}
+
+.initial-cell {
+    background-color: #f0f0f0;
+}
+
+.grid-cell.incorrect {
+    background-color: red;
+}
+
+.grid-cell.editable-cell {
+    background-color: #fff;
+    color: #000;
+    cursor: text;
+}
+
+.grid-cell.non-editable-cell {
+    background-color: #f0f0f0;
+    color: #333;
+    cursor: not-allowed;
+    font-weight: bold;
+}
+
+.grid-cell.hinted {
+    background-color: blue;
+    color: white;
+}
+
+#hint-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#hint-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

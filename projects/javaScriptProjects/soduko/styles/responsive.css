@@ -1,0 +1,32 @@
+/* responsive.css */
+
+/* Adjust grid cell size for smaller screens */
+@media (max-width: 600px) {
+    #sudoku-grid {
+        grid-template-columns: repeat(9, 30px);
+        grid-template-rows: repeat(9, 30px);
+    }
+
+    #controls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .grid-cell {
+        font-size: 16px;
+    }
+}
+
+/* Adjust button and controls for smaller screens */
+@media (max-width: 400px) {
+
+    button,
+    select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    #hint-button {
+        font-size: 14px;
+    }
+}

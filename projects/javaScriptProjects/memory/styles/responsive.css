@@ -1,0 +1,22 @@
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .card {
+        width: 80px;
+        height: 80px;
+    }
+
+    .form-control {
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 60px;
+        height: 60px;
+    }
+
+    .form-control {
+        max-width: 120px;
+    }
+}
