@@ -1,18 +1,15 @@
-// background.js
-
 export const formatTime = (timestamp) => {
     const date = new Date(timestamp);
     let hours = date.getHours();
     const minutes = date.getMinutes().toString().padStart(2, '0');
     const ampm = hours >= 12 ? 'אחה"צ' : 'לפנה"צ';
 
-    // Check if the time is exactly midnight or noon
     if (hours === 0) {
         return `חצות`;
     }
 
     hours = hours % 12;
-    hours = hours ? hours : 12; // The hour '0' should be '12'
+    hours = hours ? hours : 12;
 
     return `${hours}:${minutes} ${ampm}`;
 };

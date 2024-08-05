@@ -1,8 +1,8 @@
-/* Menu Styles */
 .menu-container {
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    padding-top: 10vh;
     background-color: #fff;
     border-radius: 10px;
     max-width: 100%;
@@ -12,15 +12,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .menu-options {
     display: flex;
     flex-direction: row;
-    /* Default to row layout for desktop */
     gap: 10px;
-    /* Space between buttons */
     margin-top: 20px;
 }
 

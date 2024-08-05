@@ -17,25 +17,17 @@
     width: 100%;
     max-width: 1000px;
     min-width: 50vw;
-    /* Ensure it takes at least half of the viewport width */
     text-align: center;
     height: auto;
-    /* Ensure it adjusts height based on content */
     margin: 0 auto;
-    /* Center horizontally */
     padding: 10px;
-    /* Adjust padding if needed */
 }
 
 #weatherDescription .weather-box {
     border: none;
-    /* Remove the border */
     height: auto;
-    /* Allow height to adjust based on content */
     padding: 10px;
-    /* Adjust padding if needed */
     margin-bottom: 10px;
-    /* Ensure spacing between boxes */
 }
 
 .time-and-wind-wrapper {
@@ -49,9 +41,7 @@
 .weather-details-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    /* 3 boxes per row */
     grid-template-rows: repeat(2, auto);
-    /* 2 rows */
     gap: 20px;
     max-width: 1000px;
     margin: 0 auto;

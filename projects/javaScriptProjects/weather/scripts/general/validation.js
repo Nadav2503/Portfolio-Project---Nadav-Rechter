@@ -1,60 +1,71 @@
-const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
+const weatherApiEndpoint = 'https://api.openweathermap.org/data/2.5/weather';
 const weatherApiKey = '857e6833020a76b352aabbaab070639c';
-const countriesApiUrl = 'https://restcountries.com/v3.1/all';
+const countriesApiEndpoint = 'https://restcountries.com/v3.1/all';
 
-export let validCountries = [];
-const exceptions = [
-    'mexico',         // Mexico City
-    'singapore',      // Singapore
-    'monaco',         // Monaco
-    'san marino',    // San Marino
-    'bissau',         // Bissau
-    'vatican city'    // Vatican City
+export let availableCountries = [];
+const countryExceptions = [
+    'mexico',
+    'singapore',
+    'monaco',
+    'san marino',
+    'bissau',
+    'vatican city'
 ];
 
-// Fetch and validate city
-export const validateCity = async (city) => {
-    const cityName = city.toLowerCase().trim();
+export const validateCityName = async (cityName) => {
+    const normalizedCityName = cityName.toLowerCase().trim();
 
-    // Check if the city is a country, but allow exceptions
-    if (validCountries.includes(cityName) && !exceptions.includes(cityName)) {
-        return { valid: false, message: "The city is a country" };
+    const isEnglishOnly = /^[a-zA-Z\s]+$/.test(normalizedCityName);
+
+    if (!isEnglishOnly) {
+        return { isValid: false, message: "העיר חייבת להיכתב באנגלית ובלי מספרים" };
+    }
+
+    if (availableCountries.includes(normalizedCityName) && !countryExceptions.includes(normalizedCityName)) {
+        return { isValid: false, message: "העיר שבחרת היא מדינה, נא בחר/י עיר ולא מדינה" };
     }
 
     try {
-        const response = await fetch(`${weatherApiUrl}?q=${city}&appid=${weatherApiKey}&units=metric`);
+        const response = await fetch(`${weatherApiEndpoint}?q=${cityName}&appid=${weatherApiKey}&units=metric`);
         if (!response.ok) {
-            return { valid: false, message: "Invalid city or unable to fetch weather data" };
+            const errorData = await response.json();
+            if (errorData.message) {
+                return { isValid: false, message: `Error: ${errorData.message}` };
+            }
+            return { isValid: false, message: "העיר לא קיימת במערכת" };
         }
-        const weatherData = await response.json();
+        const weatherResponse = await response.json();
 
-        // Extract the needed data from the weather response
-        const { coord, timezone } = weatherData;
+        if (!weatherResponse.coord) {
+            return { isValid: false, message: "העיר לא קיימת במערכת" };
+        }
+
+        const { coord, timezone } = weatherResponse;
         const { lat, lon } = coord;
 
         return {
-            valid: true,
+            isValid: true,
             data: {
-                city: cityName,
-                lat,
-                lon,
-                timezone // Timezone information from OpenWeatherMap
+                city: normalizedCityName,
+                latitude: lat,
+                longitude: lon,
+                timezone
             }
         };
     } catch (error) {
-        console.error('Error validating city:', error);
-        return { valid: false, message: "An error occurred while validating the city" };
+        console.error('Fetch error:', error);
+        return { isValid: false, message: "העיר לא קיימת במערכת" };
     }
 };
 
-// Fetch valid countries
-export const fetchValidCountries = async () => {
+
+export const fetchAvailableCountries = async () => {
     try {
-        const response = await fetch(countriesApiUrl);
-        if (!response.ok) throw new Error('Failed to fetch country list');
-        const data = await response.json();
-        validCountries = data.map(country => country.name.common.toLowerCase());
-    } catch (error) {
-        console.error('Error fetching country list:', error);
+        const response = await fetch(countriesApiEndpoint);
+        if (!response.ok) throw new Error('העיר לא קיימת במערכת');
+        const countryData = await response.json();
+        availableCountries = countryData.map(country => country.name.common.toLowerCase());
+    } catch {
+        return { isValid: false, message: "העיר לא קיימת במערכת" };
     }
 };

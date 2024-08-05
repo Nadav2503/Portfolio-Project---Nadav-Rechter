@@ -1,4 +1,4 @@
-import { levels } from './level.js';
+import { levels } from './gameLevels.js';
 
 export function renderBoard(deck, level, cardClickHandler) {
     const gameBoard = document.getElementById('game-board');
@@ -10,8 +10,6 @@ export function renderBoard(deck, level, cardClickHandler) {
         cardElement.classList.add('card');
         cardElement.dataset.id = card.id;
         cardElement.style.backgroundImage = `url(${deck.cardBackImage})`;
-        // cardElement.style.backgroundSize = 'cover';
-        // cardElement.style.backgroundPosition = 'center';
         cardElement.addEventListener('click', cardClickHandler);
         gameBoard.appendChild(cardElement);
     });

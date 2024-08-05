@@ -1,4 +1,3 @@
-/* General styles for wind-box */
 .wind-box {
     width: 18rem;
     height: 18rem;
@@ -13,10 +12,8 @@
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-    /* For positioning the background image */
 }
 
-/* Adjust the position and size of the background image */
 .wind-box .background-image {
     position: absolute;
     top: 0;
@@ -26,12 +23,9 @@
     background-size: cover;
     background-position: center;
     z-index: 1;
-    /* Ensure it is behind the content */
     opacity: 0.3;
-    /* Adjust opacity if needed */
 }
 
-/* Style the wind icon */
 .wind-icon {
     width: 8rem;
     height: 8rem;
@@ -40,12 +34,9 @@
     border-radius: 50%;
     margin-bottom: 1.5rem;
     position: relative;
-    /* Ensure it stacks correctly with text */
     z-index: 2;
-    /* Ensure it is above the background image */
 }
 
-/* Wind details container */
 .wind-details {
     display: flex;
     flex-direction: column;
@@ -53,10 +44,8 @@
     width: 100%;
     position: relative;
     z-index: 2;
-    /* Ensure it is above the background image */
 }
 
-/* Individual wind detail */
 .wind-detail {
     display: flex;
     flex-direction: column;
@@ -64,26 +53,21 @@
     margin-bottom: 1rem;
 }
 
-/* Style for category labels */
 .wind-detail .detail-category {
     font-weight: bold;
     margin-bottom: 0.5rem;
 }
 
-/* Style for detail values */
 .wind-detail .detail-value {
     display: flex;
     align-items: center;
 }
 
-/* Style for detail icons */
 .wind-detail .detail-icon {
     margin-right: 0.5rem;
 }
 
-/* Style for wind direction icon */
 .wind-direction-icon {
     margin-left: 0.5rem;
     height: 2rem;
-    /* Adjust as needed */
 }

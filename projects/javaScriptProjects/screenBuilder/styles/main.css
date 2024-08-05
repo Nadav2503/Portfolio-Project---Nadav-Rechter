@@ -6,28 +6,30 @@
 
 body,
 html {
-  height: 100%;
+  height: auto;
   font-family: Arial, sans-serif;
 }
 
 .container {
   display: flex;
-  height: 100vh;
+  min-height: auto;
   flex-direction: row;
 }
 
-.white-div {
+.design-area {
   flex: 1;
   background-color: white;
   overflow: auto;
 }
 
-.form-div {
+.form-container {
   background: #252c41;
   color: white;
   padding: 20px;
   flex: 1;
   overflow: auto;
+  height: auto;
+  margin-bottom: 30px;
 }
 
 form {
@@ -41,7 +43,7 @@ form {
   overflow: auto;
 }
 
-.actions {
+.action-buttons {
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -52,8 +54,7 @@ form {
   max-width: 100vw;
   overflow: auto;
 }
-
-.actions button {
+.action-buttons button {
   margin: 0 10px;
 }
 
@@ -65,11 +66,10 @@ button {
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
-
 button:hover {
   background-color: #3daefc;
-  /* Button hover effect */
 }
 
 input[type=number],
@@ -89,24 +89,21 @@ textarea {
   width: 50px;
   height: 50px;
   border-radius: 0;
-  /* Square appearance */
 }
 
-.shape-option {
+#shapeSelect {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-
-.shape-option input[type=radio] {
+#shapeSelect input[type=radio] {
   margin-right: 10px;
 }
 
 .form-step {
   display: none;
-  /* Only one active at a time */
+  color: antiquewhite;
 }
-
 .form-step.active {
   display: block;
 }
@@ -125,27 +122,21 @@ textarea {
   display: block;
 }
 
-.message-container {
+.message-area {
   display: none;
-  /* Initially hidden */
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #f8f8f8;
-  color: #333;
   font-size: 16px;
 }
-
-.message-container.info {
+.message-area .info {
   border-color: #4CAF50;
-  /* Green border for informational messages */
   color: #4CAF50;
 }
-
-.message-container.error {
+.message-area .error {
   border-color: #F44336;
-  /* Red border for error messages */
   color: #F44336;
 }
 
@@ -153,18 +144,18 @@ textarea {
   .container {
     flex-direction: column;
   }
-  .form-div {
+  .form-container {
     padding: 20px;
   }
   form {
     padding: 10px;
     max-width: 100%;
   }
-  .actions {
+  .action-buttons {
     flex-direction: row;
     align-items: center;
   }
-  .actions button {
+  .action-buttons button {
     margin: 5px 5px;
   }
 }
@@ -190,10 +181,10 @@ textarea {
     width: 40px;
     height: 40px;
   }
-  .shape-option {
+  #shapeSelect {
     flex-direction: column;
   }
-  .shape-option input[type=radio] {
+  #shapeSelect input[type=radio] {
     margin-bottom: 5px;
   }
 }/*# sourceMappingURL=main.css.map */

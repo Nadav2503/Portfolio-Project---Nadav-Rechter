@@ -1,25 +1,21 @@
 import { showWeather } from '../../weather/weather.js';
 import { fetchForecast } from './forecastView.js';
 import { displayLocalTime } from './utils.js';
-import { showError } from './domManipulations.js'; // Import should match the export
+import { showError } from './domManipulations.js';
 
 const weatherApiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 const weatherApiKey = '857e6833020a76b352aabbaab070639c';
 
 export const fetchWeather = async (city) => {
     try {
-        console.log(`Fetching weather for city: ${city}`);
         const response = await fetch(`${weatherApiUrl}?q=${city}&appid=${weatherApiKey}&units=metric`);
         if (!response.ok) throw new Error('City not found or API error');
         const data = await response.json();
-        console.log('Weather data:', data);
 
         showWeather(data);
 
         const { lat, lon } = data.coord;
-        const timezoneOffset = data.timezone; // Timezone offset in seconds from UTC
-
-        console.log(`Timezone offset: ${timezoneOffset} seconds`);
+        const timezoneOffset = data.timezone;
 
         if (!lat || !lon) {
             throw new Error('Latitude and Longitude information not available');
@@ -42,7 +38,6 @@ export const fetchWeather = async (city) => {
             dailyForecast.style.display = 'block';
         }
     } catch (error) {
-        console.error('Error fetching weather:', error);
-        showError(error.message); // Now it should work
+        showError(error.message);
     }
 };

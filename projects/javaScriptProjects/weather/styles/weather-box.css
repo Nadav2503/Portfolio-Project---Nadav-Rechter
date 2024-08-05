@@ -4,32 +4,20 @@
     align-items: center;
     justify-content: center;
     border: 2px solid #ddd;
-    /* Border around the box */
     border-radius: 50%;
-    /* Make the box circular */
     background-color: #f9f9f9;
-    /* Background color of the box */
     box-sizing: border-box;
-    /* Include padding and border in width and height */
     width: 120px;
-    /* Fixed width */
     height: 120px;
-    /* Fixed height to maintain circular shape */
     max-width: 100%;
-    /* Prevent exceeding the container width */
     overflow: hidden;
-    /* Hide overflow to ensure clean edges */
     text-align: center;
-    /* Center text horizontally */
 }
 
 .weather-box img {
     max-width: 60%;
-    /* Ensure image fits within the box */
     max-height: 60%;
-    /* Ensure image fits within the box */
     margin-bottom: 0.5rem;
-    /* Space below the image */
 }
 
 .weather-box div {
@@ -39,12 +27,9 @@
     justify-content: center;
     width: 100%;
     box-sizing: border-box;
-    /* Include padding and border in width and height */
     text-align: center;
-    /* Center text horizontally */
 }
 
-/* Specific styles for time details */
 #weatherTime {
     display: flex;
     flex-direction: column;
@@ -76,16 +61,13 @@
     font-weight: bold;
     flex: 1;
     text-align: left;
-    /* Align text to the left */
 }
 
 #weatherTime .time-category .detail-value {
     flex: 1;
     text-align: right;
-    /* Align text to the right */
 }
 
-/* Styles for specific weather details using IDs */
 #weatherCity {
     font-size: 1.2em;
     font-weight: bold;
@@ -106,7 +88,6 @@
     justify-content: center;
 }
 
-/* Specific styles for other weather details */
 #weatherWind,
 #weatherTemperature,
 #weatherFeelsLike,
@@ -162,75 +143,55 @@
 }
 
 #weatherHumidity .weather-box {
-    /* Start with a default background that will be overridden by JavaScript */
     background: transparent;
-    /* Allow JS to set a specific color */
     border: none;
-    /* Remove border if necessary */
     width: auto;
-    /* Allow width to adjust based on content */
     height: auto;
-    /* Allow height to adjust based on content */
     padding: 10px;
-    /* Adjust padding as needed */
 }
 
 #weatherUvIndex .weather-box {
     background-color: #9c27b0;
-    /* Purple background color */
     color: white;
-    /* Ensure text is readable on a dark background */
     border: 2px solid #ddd;
-    /* Optional: Border around the box */
 }
 
-/* Temperature range styles */
 .weather-box.cold {
     background: linear-gradient(135deg, #00f260, #0575e6);
-    /* Cold gradient */
 }
 
 .weather-box.lukewarm {
     background: linear-gradient(135deg, #fbc2eb, #a6c0fe);
-    /* Lukewarm gradient */
 }
 
 .weather-box.hot {
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
-    /* Hot gradient */
 }
 
 .weather-box.no-rain {
     background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-    /* No rain color */
 }
 
 .weather-box.low-rain {
     background: linear-gradient(135deg, #b3e5fc, #81d4fa);
-    /* Light rain color */
 }
 
 .weather-box.high-rain {
     background: linear-gradient(135deg, #4fc3f7, #0288d1);
-    /* Dark rain color */
 }
 
 .weather-box.air-pressure {
     background: linear-gradient(135deg, #ff8a80, #80deea, #a5d6a7);
-    /* Gradient from low pressure to high pressure */
 }
 
 .weather-box.low-pressure {
     background: #ff8a80;
-    /* Light Red for low pressure */
 }
 
 .weather-box.normal-pressure {
     background: #80deea;
-    /* Light Cyan for normal pressure */
 }
 
 .weather-box.high-pressure {
     background: #a5d6a7;
-    /* Light Green for high pressure */
 }

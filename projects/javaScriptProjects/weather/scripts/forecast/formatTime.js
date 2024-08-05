@@ -1,9 +1,6 @@
-// formatTime.js
-
-// Function to format time without leading zeros
 export const formatTimeWithAMPM = (date) => {
     if (!(date instanceof Date) || isNaN(date.getTime())) {
-        return 'לא ידוע'; // Return 'Unknown' if the date is invalid
+        return 'לא ידוע';
     }
 
     let hours = date.getHours();
@@ -11,9 +8,9 @@ export const formatTimeWithAMPM = (date) => {
     const ampm = hours >= 12 ? 'אחה"צ' : 'לפנה"צ';
 
     if (hours === 0) {
-        hours = 12; // Midnight case
+        hours = 12;
     } else if (hours > 12) {
-        hours -= 12; // Convert 24-hour format to 12-hour format
+        hours -= 12;
     }
 
     return `${hours}:${minutes} ${ampm}`;

@@ -1,92 +1,83 @@
-import { TodoManager } from './todoManager.js';
-import { disableInteractions, enableInteractions } from './utils.js';
-import { formatDate } from './formatDate.js';
+import { TaskManager } from './taskManager.js';
+import { disableUserInteractions, enableUserInteractions } from './utilityFunctions.js';
+import { formatDate } from './dateFormatter.js';
 
-// Initialize TodoManager and load existing tasks
-const taskManager = new TodoManager();
+const taskManager = new TaskManager();
 window.taskManager = taskManager;
-window.makeRowEditable = function (index) {
-    const rowOnHtml = document.getElementById("row" + index);
-    if (!rowOnHtml) {
-        console.error(`Element with ID 'row${index}' not found.`);
+window.makeRowEditable = function (taskIndex) {
+    const rowElement = document.getElementById("row" + taskIndex);
+    if (!rowElement) {
         return;
     }
 
-    const task = taskManager.tasks[index];
+    const task = taskManager.tasks[taskIndex];
     if (!task) {
-        console.error(`Task with index ${index} not found.`);
         return;
     }
 
     const { isComplete, id, description, creationDate } = task;
 
-    const newRow = `
-        <td class="todo-cell">
-            <input type="checkbox" ${isComplete ? 'checked' : ''} onclick="taskManager.toggleIsComplete(${index})" />
+    const updatedRow =
+        `<td class="todo-cell">
+            <input type="checkbox" ${isComplete ? 'checked' : ''} onclick="taskManager.toggleTaskCompletion(${taskIndex})" />
         </td>
         <td class="todo-cell ${isComplete ? 'completed' : ''}">${isComplete}</td>
         <td class="todo-cell ${isComplete ? 'completed' : ''}">${id}</td>
         <td class="todo-cell ${isComplete ? 'completed' : ''}">
-            <input id="editInput${index}" value="${description}" />
+            <input id="editInput${taskIndex}" value="${description}" />
         </td>
         <td class="todo-cell ${isComplete ? 'completed' : ''}">${formatDate(creationDate)}</td>
         <td class="todo-cell">
-            <button class="todo-edit" onclick="editTask(${index})">Save</button>
+            <button class="todo-edit" onclick="saveTaskChanges(${taskIndex})">Save</button>
         </td>
         <td class="todo-cell">
-            <button class="todo-delete" onclick="confirmDelete(${index})">Delete</button>
-        </td>
-    `;
-    rowOnHtml.innerHTML = newRow;
+            <button class="todo-delete" onclick="showDeleteConfirmation(${taskIndex})">Delete</button>
+        </td>`;
+    rowElement.innerHTML = updatedRow;
 };
 
-window.editTask = function (index) {
-    const editInput = document.getElementById("editInput" + index);
+window.saveTaskChanges = function (taskIndex) {
+    const editInput = document.getElementById("editInput" + taskIndex);
     if (editInput && editInput.value) {
-        taskManager.updateTask(index, editInput.value);
+        taskManager.updateTaskDescription(taskIndex, editInput.value);
     }
 };
 
-window.confirmDelete = function (index) {
-    // Disable interactions with other elements
-    disableInteractions();
+window.showDeleteConfirmation = function (taskIndex) {
+    disableUserInteractions();
 
-    // Create and show the confirmation dialog
-    const dialog = document.createElement('div');
-    dialog.className = 'confirmation-dialog';
-    dialog.innerHTML = `
-        <p>Are you sure you want to delete this task?</p>
+    const confirmationDialog = document.createElement('div');
+    confirmationDialog.className = 'confirmation-dialog';
+    confirmationDialog.innerHTML =
+        `<p>Are you sure you want to delete this task?</p>
         <div class="confirmation-button-container">
-        <button id="confirmYes" class="confirmation-button yes" onclick="deleteTask(${index})">Yes</button>
-        <button id="confirmNo" class="confirmation-button no" onclick="closeConfirmation()">No</button>
-        </div>
-    `;
-    document.body.appendChild(dialog);
+            <button id="confirmYes" class="confirmation-button-yes" onclick="confirmTaskDeletion(${taskIndex})">Yes</button>
+            <button id="confirmNo" class="confirmation-button-no" onclick="hideConfirmationDialog()">No</button>
+        </div>`;
+    document.body.appendChild(confirmationDialog);
 };
 
-window.closeConfirmation = function () {
+window.hideConfirmationDialog = function () {
     const dialog = document.querySelector('.confirmation-dialog');
     if (dialog) {
         document.body.removeChild(dialog);
     }
-    // Re-enable interactions with other elements
-    enableInteractions();
+    enableUserInteractions();
 };
 
-window.deleteTask = function (index) {
-    taskManager.removeTask(index);
-    closeConfirmation();
+window.confirmTaskDeletion = function (taskIndex) {
+    taskManager.removeTaskByIndex(taskIndex);
+    hideConfirmationDialog();
 };
 
-window.sortTable = function (column, direction) {
+window.sortTasksBy = function (column, direction) {
     taskManager.sortTasks(column, direction);
 };
 
-// Event listener for adding new tasks
-document.getElementById('addTaskBtn').addEventListener('click', () => {
+document.getElementById('addTaskButton').addEventListener('click', () => {
     const newTaskInput = document.getElementById('newTaskInput');
     if (newTaskInput.value) {
-        taskManager.addTask(newTaskInput.value);
+        taskManager.addNewTask(newTaskInput.value);
         newTaskInput.value = '';
     }
 });

@@ -1,61 +1,69 @@
-import { validateCity, fetchValidCountries } from "./validation.js";
+import { validateCityName, fetchAvailableCountries } from "./validation.js";
 
 document.addEventListener('DOMContentLoaded', async () => {
-    const searchButton = document.getElementById('searchButton');
-    const cityInput = document.getElementById('cityInput');
-    const initialView = document.getElementById('initialView');
-    const header = document.querySelector('#initialView h1');
-    const errorContainer = document.getElementById('errorContainer');
+    const searchCityButton = document.getElementById('searchCityButton');
+    const citySearchInput = document.getElementById('citySearchInput');
+    const initialSearchView = document.getElementById('initialSearchView');
+    const pageHeader = document.querySelector('#initialSearchView h1');
+    const searchErrorContainer = document.getElementById('searchErrorContainer');
 
-    const morningImage = './../images/morning-sky-background.avif';
-    const nightImage = './../images/night-sky-background.jpg';
-    const gradientBackground = 'linear-gradient(to bottom, #FFD700, #FF4500)'; // Morning to noon gradient
+    if (initialSearchView) {
+        const morningBackgroundImage = 'images/morning-sky-background.jpg';
+        const nightBackgroundImage = 'images/night-sky-background.jpg';
+        const noonToEveningGradient = 'linear-gradient(to bottom, #FFD700, #FF4500)';
 
-    const now = new Date();
-    const hours = now.getHours();
+        const currentDate = new Date();
+        const currentHour = currentDate.getHours();
 
-    let backgroundColor;
-    let textColor;
+        let backgroundStyle;
+        let textColorStyle;
 
-    if (hours >= 6 && hours < 12) { // Morning (6 AM to 12 PM)
-        backgroundColor = `url('${morningImage}') no-repeat center center fixed`;
-        textColor = 'darkblue'; // Dark color for light background
-    } else if (hours >= 18 || hours < 6) { // Night (6 PM to 6 AM)
-        backgroundColor = `url('${nightImage}') no-repeat center center fixed`;
-        textColor = 'cyan'; // Light color for dark background
-    } else { // Noon and Evening (12 PM to 6 PM)
-        backgroundColor = gradientBackground;
-        textColor = '#333'; // Dark color for lighter gradient
+        if (currentHour >= 6 && currentHour < 12) {
+            backgroundStyle = `url('${morningBackgroundImage}') no-repeat center center fixed`;
+            textColorStyle = 'darkblue';
+        } else if (currentHour >= 18 || currentHour < 6) {
+            backgroundStyle = `url('${nightBackgroundImage}') no-repeat center center fixed`;
+            textColorStyle = 'cyan';
+        } else {
+            backgroundStyle = noonToEveningGradient;
+            textColorStyle = '#333';
+        }
+        initialSearchView.style.background = backgroundStyle;
+        initialSearchView.style.backgroundSize = 'cover';
+
+        if (pageHeader) {
+            pageHeader.style.color = textColorStyle;
+        }
+        if (searchErrorContainer) {
+            searchErrorContainer.style.color = textColorStyle;
+        }
     }
 
-    initialView.style.background = backgroundColor;
-    initialView.style.backgroundSize = 'cover';
+    await fetchAvailableCountries();
 
-    header.style.color = textColor;
-    errorContainer.style.color = textColor;
-
-    // Fetch valid countries on page load
-    await fetchValidCountries();
-
-    searchButton.addEventListener('click', async () => {
-        const city = cityInput.value.trim();
-        if (city) {
-            const result = await validateCity(city);
-            if (result.valid) {
-                window.location.href = `view.html?city=${encodeURIComponent(city)}`;
+    if (searchCityButton && citySearchInput) {
+        searchCityButton.addEventListener('click', async () => {
+            const cityName = citySearchInput.value.trim();
+            if (cityName) {
+                const validationResult = await validateCityName(cityName);
+                if (validationResult.isValid) {
+                    window.location.href = `weather-details.html?city=${encodeURIComponent(cityName)}`;
+                } else {
+                    displayError(validationResult.message);
+                }
             } else {
-                showError(result.message); // Use message from validation
+                displayError('Please enter a city name.');
             }
-        } else {
-            showError('Please enter a city name.');
-        }
-    });
+        });
+    }
 
-    const showError = (message) => {
-        if (errorContainer) {
-            errorContainer.textContent = message;
-            errorContainer.style.display = 'block';
+    const displayError = (message) => {
+        if (searchErrorContainer) {
+            searchErrorContainer.textContent = message;
+            searchErrorContainer.style.display = 'block';
         }
-        cityInput.value = ''; // Clear the input field
+        if (citySearchInput) {
+            citySearchInput.value = '';
+        }
     };
 });

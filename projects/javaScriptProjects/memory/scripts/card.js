@@ -1,17 +1,17 @@
 export default class Card {
     constructor(value, imageUrl) {
-        this.id = this.generateUniqueId();
+        this.id = this.generateId();
         this.value = value;
         this.imageUrl = imageUrl;
         this.isFlipped = false;
         this.isMatched = false;
     }
 
-    generateUniqueId() {
-        return '_' + Math.random().toString(36).substr(2, 9);
+    generateId() {
+        return '_' + Math.random().toString(36).substring(2, 9);
     }
 
-    flip() {
+    toggleFlip() {
         this.isFlipped = !this.isFlipped;
     }
 
@@ -19,7 +19,7 @@ export default class Card {
         this.isFlipped = false;
     }
 
-    match() {
+    markAsMatched() {
         this.isMatched = true;
     }
 }

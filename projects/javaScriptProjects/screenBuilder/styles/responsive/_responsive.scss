@@ -1,12 +1,9 @@
-// Responsive Design
-
-// Tablets and small devices (up to 768px wide)
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
     }
 
-    .form-div {
+    .form-container {
         padding: 20px;
     }
 
@@ -15,17 +12,16 @@
         max-width: 100%;
     }
 
-    .actions {
+    .action-buttons {
         flex-direction: row;
         align-items: center;
     }
 
-    .actions button {
+    .action-buttons button {
         margin: 5px 5px;
     }
 }
 
-// Mobile devices (up to 480px wide)
 @media (max-width: 480px) {
 
     .form-step h2,
@@ -53,11 +49,11 @@
         height: 40px;
     }
 
-    .shape-option {
+    #shapeSelect {
         flex-direction: column;
-    }
 
-    .shape-option input[type="radio"] {
-        margin-bottom: 5px;
+        input[type="radio"] {
+            margin-bottom: 5px;
+        }
     }
 }

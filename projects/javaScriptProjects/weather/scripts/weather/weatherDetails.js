@@ -1,9 +1,6 @@
-// weatherDetails.js
-
 import { updateWeatherDetail } from './temperature.js';
-import { getHumidityColor } from './background.js'; // Added getHumidityColor
+import { getHumidityColor } from './background.js';
 
-// Update Temperature and other weather details
 export const showWeatherDetails = (data) => {
     updateWeatherDetail('weatherTemperature', '🌡️', 'טמפרטורה:', Math.round(data.main.temp || 0));
     updateWeatherDetail('weatherFeelsLike', '😓', 'מרגיש כמו:', Math.round(data.main.feels_like || 0));
@@ -13,7 +10,6 @@ export const showWeatherDetails = (data) => {
     updateHumidity(data.main.humidity || 0);
 };
 
-// Helper function to update pressure details
 const updatePressureDetail = (pressure) => {
     const pressureElement = document.getElementById('weatherPressure');
     if (pressureElement) {
@@ -31,7 +27,6 @@ const updatePressureDetail = (pressure) => {
     }
 };
 
-// Helper function to update rain chance
 const updateRainChance = (rainChance) => {
     const rainChanceElement = document.getElementById('weatherRainChance');
     if (rainChanceElement) {
@@ -45,7 +40,6 @@ const updateRainChance = (rainChance) => {
     }
 };
 
-// Helper function to update humidity
 const updateHumidity = (humidity) => {
     const humidityElement = document.getElementById('weatherHumidity');
     if (humidityElement) {

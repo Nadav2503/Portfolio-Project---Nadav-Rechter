@@ -1,9 +1,9 @@
-.shape-option {
+#shapeSelect {
     display: flex;
     align-items: center;
     margin-top: 10px;
-}
 
-.shape-option input[type="radio"] {
-    margin-right: 10px;
+    input[type="radio"] {
+        margin-right: 10px;
+    }
 }

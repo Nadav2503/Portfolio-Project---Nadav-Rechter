@@ -1,8 +1,5 @@
-// timeDetails.js
-
 import { formatTime } from './background.js';
 
-// Update Sunrise and Sunset Times
 export const showTimeDetails = (data) => {
     const now = new Date();
     const sunriseTime = formatTime(data.sys.sunrise * 1000);

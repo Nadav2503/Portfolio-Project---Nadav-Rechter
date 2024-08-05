@@ -1,23 +1,19 @@
-.message-container {
+.message-area {
     display: none;
-    /* Initially hidden */
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #f8f8f8;
-    color: #333;
     font-size: 16px;
-}
 
-.message-container.info {
-    border-color: #4CAF50;
-    /* Green border for informational messages */
-    color: #4CAF50;
-}
+    .info {
+        border-color: #4CAF50;
+        color: #4CAF50;
+    }
 
-.message-container.error {
-    border-color: #F44336;
-    /* Red border for error messages */
-    color: #F44336;
+    .error {
+        border-color: #F44336;
+        color: #F44336;
+    }
 }

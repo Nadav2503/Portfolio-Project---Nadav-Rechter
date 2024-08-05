@@ -1,9 +1,6 @@
-// windDetails.js
-
 import { getCompassDirection } from './background.js';
 import { windIconMap, englishToHebrewMap } from './../general/icons.js';
 
-// Update Wind Details
 export const showWindDetails = (windData) => {
     const windDirection = getCompassDirection(windData.deg || 0);
     const windDirectionInHebrew = englishToHebrewMap[windDirection] || 'לא ידוע';

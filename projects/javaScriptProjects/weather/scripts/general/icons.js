@@ -1,5 +1,3 @@
-// icons.js
-
 export const englishToHebrewMap = {
     'clear sky': 'בהיר',
     'few clouds': 'מעונן חלקית',

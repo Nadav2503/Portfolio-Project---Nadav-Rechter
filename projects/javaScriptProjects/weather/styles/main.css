@@ -1,47 +1,37 @@
-/* Basic reset to remove default margins and padding */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Ensure html and body take full height */
 html,
 body {
     height: 100%;
     margin: 0;
 }
 
-/* Style for the header */
-#initialView h1 {
+#initialSearchView h1 {
     font-size: 2em;
-    color: #fff;
-    /* White text for contrast against the background */
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Style for the error container */
-#errorContainer {
+#searchErrorContainer {
     color: red;
     display: none;
-    /* Hidden by default, shown only when there's an error */
     margin-top: 10px;
 }
 
-/* Container that holds the input and button */
-#initialView {
+#initialSearchView {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
     background-size: cover;
-    /* Ensure the image covers the entire container */
 }
 
-/* Style for the input field */
-#cityInput {
+#citySearchInput {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
@@ -51,8 +41,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Style for the search button */
-#searchButton {
+#searchCityButton {
     padding: 10px 20px;
     font-size: 16px;
     border: none;
@@ -64,7 +53,6 @@ body {
     max-width: 300px;
 }
 
-/* Style for the button on hover */
-#searchButton:hover {
+#searchCityButton:hover {
     background-color: #0056b3;
 }

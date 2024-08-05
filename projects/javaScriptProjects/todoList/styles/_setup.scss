@@ -1,4 +1,3 @@
-// Global styles
 * {
     margin: 0;
     padding: 0;
@@ -20,7 +19,7 @@ body {
     align-items: center;
 }
 
-.disabled {
+.disabled-element {
     pointer-events: none;
     opacity: 0.5;
 }

@@ -1,4 +1,3 @@
-// utils.js
 import { applyTemperatureClass } from './background.js';
 
 export const updateWeatherDetail = (id, icon, category, value) => {

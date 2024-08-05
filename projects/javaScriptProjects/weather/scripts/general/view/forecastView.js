@@ -1,6 +1,6 @@
 import { handleForecastData } from './../../forecast/forecast.js';
-import { showError, updateUI, applyForecastBoxBackgroundColor } from './domManipulations.js'; // Import updateUI and applyForecastBoxBackgroundColor
-import { getForecastBoxColor } from './utils.js'; // Import getForecastBoxColor
+import { showError, updateUI, applyForecastBoxBackgroundColor } from './domManipulations.js';
+import { getForecastBoxColor } from './utils.js';
 
 const forecastApiUrl = 'https://api.openweathermap.org/data/2.5/forecast';
 const weatherApiKey = '857e6833020a76b352aabbaab070639c';
@@ -12,11 +12,9 @@ export const fetchForecast = async (lat, lon, timezoneOffset) => {
         const data = await response.json();
         handleForecastData(data, timezoneOffset);
 
-        // Call updateUI to set the background and forecast box color
-        updateUI(); // This will handle the background and forecast box color
+        updateUI();
 
-        // Reapply the forecast box color after fetching the data
-        const forecastBoxColor = getForecastBoxColor(); // Get color from utils.js
+        const forecastBoxColor = getForecastBoxColor();
         applyForecastBoxBackgroundColor(forecastBoxColor);
 
     } catch (error) {

@@ -1,7 +1,5 @@
-// domManipulations.js
-
-const morningImage = './../images/morning-sky-background.avif';
-const nightImage = './../images/night-sky-background.jpg';
+const morningImage = 'images/morning-sky-background.jpg';
+const nightImage = 'images/night-sky-background.jpg';
 const gradientBackground = 'linear-gradient(to bottom, #87CEFA, #FFD700)';
 
 const applyForecastBoxBackgroundColor = (color) => {
@@ -19,18 +17,18 @@ export const updateUI = () => {
     let textColor;
     let forecastBoxColor;
 
-    if (hours >= 6 && hours < 12) { // Morning (6 AM to 12 PM)
+    if (hours >= 6 && hours < 12) {
         backgroundColor = `url('${morningImage}') no-repeat center center fixed`;
         textColor = 'darkblue';
-        forecastBoxColor = '#E1F5FE'; // Light blue
-    } else if (hours >= 18 || hours < 6) { // Night (6 PM to 6 AM)
+        forecastBoxColor = '#E1F5FE';
+    } else if (hours >= 18 || hours < 6) {
         backgroundColor = `url('${nightImage}') no-repeat center center fixed`;
         textColor = 'cyan';
-        forecastBoxColor = '#01579B'; // Dark blue
-    } else { // Noon and Evening (12 PM to 6 PM)
+        forecastBoxColor = '#01579B';
+    } else {
         backgroundColor = gradientBackground;
         textColor = '#333';
-        forecastBoxColor = '#90A4AE'; // Greyish blue
+        forecastBoxColor = '#90A4AE';
     }
 
     const viewContainer = document.getElementById('viewContainer');
@@ -55,7 +53,6 @@ export const updateUI = () => {
         header.style.textAlign = 'center';
     });
 
-    // Ensure forecast boxes are updated with the correct color
     applyForecastBoxBackgroundColor(forecastBoxColor);
 };
 

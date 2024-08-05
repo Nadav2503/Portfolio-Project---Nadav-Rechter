@@ -6,22 +6,19 @@ button {
     background-color: #4caf50;
     color: white;
     font-size: 1rem;
-    /* Use rem for scalability */
     box-sizing: border-box;
-    /* Ensure full width usage */
 }
 
 button:hover {
     background-color: #45a049;
 }
 
-.sort-btn {
+.sort-button {
     border: none;
     background: none;
     color: #333;
     cursor: pointer;
     font-size: 1rem;
-    /* Use rem for scalability */
     margin-left: 5px;
     padding: 0;
 }
@@ -30,7 +27,7 @@ button:hover {
     display: none;
 }
 
-.sort-btn:hover {
+.sort-button:hover {
     color: #007bff;
 }
 

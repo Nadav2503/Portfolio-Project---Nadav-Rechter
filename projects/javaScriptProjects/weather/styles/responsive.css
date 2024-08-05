@@ -1,10 +1,7 @@
-/* Small devices (phones, 600px and down) */
 @media (max-width: 600px) {
     .weather-details-container {
         grid-template-columns: repeat(1, 1fr);
-        /* 1 box per row */
         grid-template-rows: repeat(auto, auto);
-        /* Adjust rows based on content */
     }
 
     .weather-details-container .weather-box {
@@ -79,13 +76,10 @@
     }
 }
 
-/* Medium devices (tablets, 600px to 992px) */
 @media (min-width: 600px) and (max-width: 992px) {
     .weather-details-container {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 boxes per row */
         grid-template-rows: repeat(2, auto);
-        /* 2 rows */
     }
 
     .weather-details-container .weather-box {
@@ -149,13 +143,10 @@
     }
 }
 
-/* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .weather-details-container {
         grid-template-columns: repeat(3, 1fr);
-        /* 3 boxes per row */
         grid-template-rows: repeat(2, auto);
-        /* 2 rows */
     }
 
     .weather-details-container .weather-box {

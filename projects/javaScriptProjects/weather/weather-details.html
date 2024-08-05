@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>פרטי מזג האוויר</title>
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/forecast.css">
+    <link rel="stylesheet" href="./styles/weather-container.css">
+    <link rel="stylesheet" href="./styles/weather-box.css">
+    <link rel="stylesheet" href="./styles/city-name.css">
+    <link rel="stylesheet" href="./styles/wind-box.css">
+    <link rel="stylesheet" href="./styles/time-box.css">
+
+    <link rel="stylesheet" href="./styles/responsive.css">
+</head>
+
+<body>
+    <div id="viewContainer">
+        <div id="weatherContainer" class="weather-container">
+            <div id="cityNameBox" class="city-name-box">
+                <h1 id="weatherCity">שם העיר</h1>
+            </div>
+            <div id="errorContainer"></div>
+            <div id="weatherDescription" class="weather-box"></div>
+            <div class="weather-row">
+                <div id="timeAndWindWrapper" class="time-and-wind-wrapper">
+                    <div id="weatherTime" class="time-box"></div>
+                    <div id="weatherWind" class="wind-box"></div>
+                </div>
+                <div id="weatherDetailsContainer" class="weather-details-container">
+                    <div id="weatherUvIndex" class="weather-box"></div>
+                    <div id="weatherTemperature" class="weather-box"></div>
+                    <div id="weatherFeelsLike" class="weather-box"></div>
+                    <div id="weatherRainChance" class="weather-box"></div>
+                    <div id="weatherPressure" class="weather-box"></div>
+                    <div id="weatherHumidity" class="weather-box"></div>
+                </div>
+
+                <div id="hourlyForecast" class="forecast-container">
+                    <h3>תחזית היום</h3>
+                    <div id="hourlyForecastContainer" class="forecast-items"></div>
+                </div>
+                <div id="dailyForecast" class="forecast-container">
+                    <h3>תחזית השבוע</h3>
+                    <div id="dailyForecastContainer" class="forecast-items"></div>
+                </div>
+                <div class="return-button-container">
+                    <button id="returnButton" class="return-button">חזור כדי לחפש מזג אוויר על ערים אחרות</button>
+                </div>
+            </div>
+            <script src="./scripts/general/view/view.js" type="module"></script>
+        </div>
+    </div>
+</body>
+
+</html>

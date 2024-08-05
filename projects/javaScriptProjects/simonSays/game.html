@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simon Says Game</title>
-    <link rel="stylesheet" href="./styles/game.css">
-    <link rel="stylesheet" href="./styles/game2.css">
+    <link rel="stylesheet" href="./styles/gameBoardStyles.css">
+    <link rel="stylesheet" href="./styles/gameStyles.css">
 </head>
 
 <body>
@@ -30,10 +30,11 @@
         <div class="button-container">
             <button class="menu-button" id="viewLeaderboard">View Leaderboard</button>
             <button class="menu-button" id="returnToMenu">Return to Menu</button>
+            <button id="restartGame" class=" menu-button hidden">Restart Game</button>
         </div>
     </div>
 
-    <script type="module" src="./scripts/main.js"></script>
+    <script type="module" src="./scripts/gameInitializer.js"></script>
 </body>
 
 </html>

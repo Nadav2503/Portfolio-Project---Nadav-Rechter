@@ -6,25 +6,17 @@
   cursor: pointer;
 }
 
-/* Ensure the heart icon is styled correctly  */
 .bi-heart {
   color: #000;
-  /* Outline color */
 }
 
 .bi-heart-fill {
   color: red;
-  /* Filled heart color */
 }
 
-
-/* New styles for flag images */
 .card-img-top {
   height: 10vh;
   object-fit: cover;
-  /* Ensures the image covers the area without distortion */
   border: 2px solid #000;
-  /* Black border to ensure visibility */
   border-radius: 0.25rem;
-  /* Optional: rounded corners */
 }

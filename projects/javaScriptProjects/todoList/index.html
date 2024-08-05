@@ -11,16 +11,16 @@
 <body>
     <div class="container">
         <div class="input-container">
-            <input type="text" placeholder="new task" id="newTaskInput" />
-            <button id="addTaskBtn">Add</button>
+            <input type="text" placeholder="New Task" id="newTaskInput" />
+            <button id="addTaskButton">Add</button>
         </div>
         <div class="sort-buttons-container">
-            <button class="sort-btn" onclick="sortTable('id', 'asc')">ID ↑</button>
-            <button class="sort-btn" onclick="sortTable('id', 'desc')">ID ↓</button>
-            <button class="sort-btn" onclick="sortTable('description', 'asc')">Description ↑</button>
-            <button class="sort-btn" onclick="sortTable('description', 'desc')">Description ↓</button>
-            <button class="sort-btn" onclick="sortTable('creationDate', 'asc')">Creation Time ↑</button>
-            <button class="sort-btn" onclick="sortTable('creationDate', 'desc')">Creation Time ↓</button>
+            <button class="sort-button" onclick="sortTasksBy('id', 'asc')">ID ↑</button>
+            <button class="sort-button" onclick="sortTasksBy('id', 'desc')">ID ↓</button>
+            <button class="sort-button" onclick="sortTasksBy('description', 'asc')">Description ↑</button>
+            <button class="sort-button" onclick="sortTasksBy('description', 'desc')">Description ↓</button>
+            <button class="sort-button" onclick="sortTasksBy('creationDate', 'asc')">Creation Time ↑</button>
+            <button class="sort-button" onclick="sortTasksBy('creationDate', 'desc')">Creation Time ↓</button>
         </div>
         <table class="todo-table">
             <thead>
@@ -28,22 +28,22 @@
                     <th class="todo-header">Complete</th>
                     <th class="todo-header">Is Complete</th>
                     <th class="todo-header todo-header-id">ID
-                        <button class="sort-btn" onclick="sortTable('id', 'asc')">↑</button>
-                        <button class="sort-btn" onclick="sortTable('id', 'desc')">↓</button>
+                        <button class="sort-button" onclick="sortTasksBy('id', 'asc')">↑</button>
+                        <button class="sort-button" onclick="sortTasksBy('id', 'desc')">↓</button>
                     </th>
                     <th class="todo-header todo-header-description">Description
-                        <button class="sort-btn" onclick="sortTable('description', 'asc')">↑</button>
-                        <button class="sort-btn" onclick="sortTable('description', 'desc')">↓</button>
+                        <button class="sort-button" onclick="sortTasksBy('description', 'asc')">↑</button>
+                        <button class="sort-button" onclick="sortTasksBy('description', 'desc')">↓</button>
                     </th>
                     <th class="todo-header todo-header-creation-time">Creation Time
-                        <button class="sort-btn" onclick="sortTable('creationDate', 'asc')">↑</button>
-                        <button class="sort-btn" onclick="sortTable('creationDate', 'desc')">↓</button>
+                        <button class="sort-button" onclick="sortTasksBy('creationDate', 'asc')">↑</button>
+                        <button class="sort-button" onclick="sortTasksBy('creationDate', 'desc')">↓</button>
                     </th>
                     <th class="todo-header">Edit</th>
                     <th class="todo-header">Delete</th>
                 </tr>
             </thead>
-            <tbody id="todoListBody">
+            <tbody id="todoTableBody">
             </tbody>
         </table>
     </div>

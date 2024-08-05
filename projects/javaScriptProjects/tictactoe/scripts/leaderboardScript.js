@@ -1,65 +1,62 @@
-// leaderboardScript.js
 document.addEventListener('DOMContentLoaded', () => {
-    const leaderboardContainer = document.querySelector('.leaderboard');
-    const backToMenuButton = document.getElementById('back-to-menu');
+    const leaderboardContainerElement = document.querySelector('.leaderboard');
+    const backToMenuButtonElement = document.getElementById('back-to-menu');
 
-    function updateLeaderboard() {
-        const wins = JSON.parse(localStorage.getItem('leaderboard')) || {};
-        leaderboardContainer.innerHTML = ''; // Clear existing entries
+    function refreshLeaderboard() {
+        const leaderboardData = JSON.parse(localStorage.getItem('leaderboard')) || {};
+        leaderboardContainerElement.innerHTML = '';
 
-        // Sort players by win count, then by games played
-        const sortedPlayers = Object.entries(wins)
-            .sort(([nameA, dataA], [nameB, dataB]) => {
-                if (dataB.wins !== dataA.wins) return dataB.wins - dataA.wins;
-                return dataA.games - dataB.games;
+        const sortedPlayerEntries = Object.entries(leaderboardData)
+            .sort(([playerNameA, statsA], [playerNameB, statsB]) => {
+                if (statsB.wins !== statsA.wins) return statsB.wins - statsA.wins;
+                return statsA.games - statsB.games;
             });
 
-        // Generate leaderboard entries
-        if (sortedPlayers.length > 0) {
-            sortedPlayers.forEach(([name, { wins, games }], index) => {
-                const entry = document.createElement('div');
-                entry.classList.add('leaderboard-entry');
+        if (sortedPlayerEntries.length > 0) {
+            sortedPlayerEntries.forEach(([playerName, { wins, games }], rank) => {
+                const leaderboardEntryElement = document.createElement('div');
+                leaderboardEntryElement.classList.add('leaderboard-entry');
 
-                let rankClass = '';
-                let medalImage = '';
+                let medalClass = '';
+                let medalImageSrc = '';
 
-                switch (index) {
+                switch (rank) {
                     case 0:
-                        rankClass = 'gold';
-                        medalImage = 'images/gold-medal.png';
+                        medalClass = 'gold';
+                        medalImageSrc = 'images/gold-medal.png';
                         break;
                     case 1:
-                        rankClass = 'silver';
-                        medalImage = 'images/silver-medal.png';
+                        medalClass = 'silver';
+                        medalImageSrc = 'images/silver-medal.png';
                         break;
                     case 2:
-                        rankClass = 'bronze';
-                        medalImage = 'images/bronze-medal.png';
+                        medalClass = 'bronze';
+                        medalImageSrc = 'images/bronze-medal.png';
                         break;
                     default:
-                        rankClass = 'default';
-                        medalImage = ''; // No medal for other positions
+                        medalClass = 'default';
+                        medalImageSrc = '';
                         break;
                 }
 
-                entry.classList.add(rankClass);
-                entry.innerHTML = `
-                    <img src="${medalImage}" alt="${rankClass} medal">
-                    <span>${index + 1}. ${name}</span> 
+                leaderboardEntryElement.classList.add(medalClass);
+                leaderboardEntryElement.innerHTML = `
+                    <img src="${medalImageSrc}" alt="${medalClass} medal">
+                    <span>${rank + 1}. ${playerName}</span> 
                     <span>${wins} Wins (${games} Games)</span>
                 `;
-                leaderboardContainer.appendChild(entry);
+                leaderboardContainerElement.appendChild(leaderboardEntryElement);
             });
         } else {
-            const noDataMessage = document.createElement('p');
-            noDataMessage.textContent = 'No leaderboard data available.';
-            leaderboardContainer.appendChild(noDataMessage);
+            const noDataMessageElement = document.createElement('p');
+            noDataMessageElement.textContent = 'No leaderboard data available.';
+            leaderboardContainerElement.appendChild(noDataMessageElement);
         }
     }
 
-    updateLeaderboard();
+    refreshLeaderboard();
 
-    backToMenuButton.addEventListener('click', () => {
+    backToMenuButtonElement.addEventListener('click', () => {
         window.location.href = 'index.html';
     });
 });
