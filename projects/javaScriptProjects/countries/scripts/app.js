@@ -9,10 +9,11 @@ let debounceTimeout;
 let countryList = [];
 let favoriteCountryList = {};
 
-const handleSearchInput = () => {
+const handleSearchInput = async () => {
     clearTimeout(debounceTimeout);
-    debounceTimeout = setTimeout(() => {
+    debounceTimeout = setTimeout(async () => {
         const query = searchInputField.value.trim();
+        favoriteCountryList = fetchSavedHeartStates();
         const results = query ? searchCountriesByName(query) : retrieveAllCountries();
         displayCountryCards(results, favoriteCountryList);
     }, 300);

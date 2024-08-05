@@ -22,16 +22,17 @@ export const createCountryCard = (country, favoriteCountries) => {
   populationInfo.className = "card-text";
   populationInfo.textContent = `Population: ${country.population.toLocaleString()}`;
 
+  const capitalsInfo = document.createElement("p");
+  capitalsInfo.className = "card-text";
+  const capitals = country.capital || [];
+  capitalsInfo.textContent = `Capital${capitals.length > 1 ? 's' : ''}: ${capitals.join(', ')}`;
+
   const cardFooter = document.createElement("div");
   cardFooter.className = "card-footer d-flex justify-content-center mb-2";
 
   const heartIcon = document.createElement("i");
-  heartIcon.className = "bi bi-heart";
+  heartIcon.className = `bi ${favoriteCountries[country.name.common] ? 'bi-heart-fill' : 'bi-heart'}`;
   heartIcon.setAttribute("aria-label", `Toggle favorite status for ${country.name.common}`);
-
-  if (favoriteCountries[country.name.common]) {
-    heartIcon.classList.replace("bi-heart", "bi-heart-fill");
-  }
 
   heartIcon.addEventListener("click", () => {
     const isFilled = heartIcon.classList.contains("bi-heart-fill");
@@ -43,11 +44,14 @@ export const createCountryCard = (country, favoriteCountries) => {
   card.appendChild(cardImage);
   cardBody.appendChild(cardTitle);
   cardBody.appendChild(populationInfo);
+  cardBody.appendChild(capitalsInfo);
   cardFooter.appendChild(heartIcon);
   card.appendChild(cardBody);
   card.appendChild(cardFooter);
   cardsContainer.appendChild(card);
 };
+
+
 
 export const displayCountryCards = (countries, favoriteCountries) => {
   cardsContainer.innerHTML = "";

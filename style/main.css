@@ -204,6 +204,7 @@ header .navbar .navbar-nav .nav-link:hover {
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: #4CAF50;
+  text-align: center;
 }
 #thirdArea .containerOfProject .row .col-lg-4 .card .card-body p {
   font-size: 1rem;
@@ -227,6 +228,10 @@ header .navbar .navbar-nav .nav-link:hover {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#thirdArea .containerOfProject .row .col-lg-4 .card .card-img-top:hover {
+  transform: scale(1.2);
 }
 
 #javascriptProjects {
@@ -246,11 +251,27 @@ header .navbar .navbar-nav .nav-link:hover {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: #4CAF50;
+  text-align: center;
 }
 #javascriptProjects .containerOfProject .beforeTheProject p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #388E3C;
+}
+#javascriptProjects .containerOfProject .beforeTheProject .knowledge {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#javascriptProjects .containerOfProject .beforeTheProject .knowledge img {
+  width: 60px;
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 #javascriptProjects .containerOfProject .row {
   display: flex;
@@ -302,6 +323,10 @@ header .navbar .navbar-nav .nav-link:hover {
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
+  transition: transform 0.3s ease;
+}
+#javascriptProjects .containerOfProject .row .col-lg-4 .card .card-img-top:hover {
+  transform: scale(1.2);
 }
 
 #fourthArea {

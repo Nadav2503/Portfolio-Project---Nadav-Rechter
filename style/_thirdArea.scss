@@ -67,6 +67,7 @@
                             font-size: 1.2rem;
                             margin-bottom: 1rem;
                             color: $green-theme; // Main green color for titles
+                            text-align: center;
                         }
 
                         p {
@@ -95,6 +96,11 @@
                     .card-img-top {
                         height: 150px; // Fixed height
                         object-fit: cover; // Ensure image covers area
+                        transition: transform 0.3s ease;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
@@ -119,12 +125,29 @@
                 font-size: 2.5rem;
                 margin-bottom: 1rem;
                 color: $green-theme; // Main green color for headings
+                text-align: center;
             }
 
             p {
                 font-size: 1.2rem;
                 line-height: 1.6;
                 color: $dark-green; // Dark green for text
+            }
+
+            .knowledge {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center; // Center icons horizontally
+                gap: 20px; // Space between icons
+
+                img {
+                    width: 60px; // Set consistent width
+                    height: 60px; // Set consistent height
+                    object-fit: contain; // Maintain aspect ratio
+                    border-radius: 4px; // Optional: rounded corners
+                    background-color: #fff; // Optional: background color for better visibility
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Optional: shadow for a polished look
+                }
             }
         }
 
@@ -183,6 +206,11 @@
                     .card-img-top {
                         height: 150px; // Fixed height
                         object-fit: cover; // Ensure image covers area
+                        transition: transform 0.3s ease;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
                     }
                 }
             }
