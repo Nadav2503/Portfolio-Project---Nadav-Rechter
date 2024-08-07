@@ -49,3 +49,6 @@ export function updateSettingsVisibility() {
         document.getElementById(relevantSettings).classList.remove('hidden');
     }
 }
+export function calculateTotalWidth(styles) {
+    return styles.width + styles.padding * 2 + styles.margin * 2;
+}

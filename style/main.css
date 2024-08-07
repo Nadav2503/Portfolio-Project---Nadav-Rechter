@@ -415,6 +415,10 @@ header .navbar .navbar-nav .nav-link:hover {
   text-decoration: none;
   color: #00f;
 }
+#fourthArea .findMe .social-icon:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 #fourthArea .findMe .social-icon img {
   width: 40px;
 }
@@ -508,6 +512,7 @@ header .navbar-nav {
 }
 #fourthArea .findMe a img {
   width: 30px;
+  height: 40px;
 }
 #fourthArea .findMe a .findMe-name {
   font-size: 0.8rem;

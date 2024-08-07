@@ -1,4 +1,4 @@
-import { displayMessage } from './settingsUtils.js';
+import { displayMessage, calculateTotalWidth } from './settingsUtils.js';
 import { createDivElement, createParagraphElement, createHeaderElement, createListElement, createTableElement } from './elementBuilder.js';
 
 export function addNewElement() {
@@ -48,6 +48,14 @@ export function addNewElement() {
         fontSize,
         fontStyle
     };
+
+    const viewportWidth = window.innerWidth;
+    const totalWidth = calculateTotalWidth(styles);
+
+    if (totalWidth > viewportWidth) {
+        displayMessage("The size of the element is to big. Please adjust the parameters.", "error");
+        return;
+    }
 
     let newElement;
 
