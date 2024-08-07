@@ -49,6 +49,8 @@ export default class CardDeck {
         gameBoard.innerHTML = '';
         const gridSize = Math.sqrt(this.cards.length);
         gameBoard.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+        const levelGap = this.category === 'easy' ? '5px' : '10px';
+        gameBoard.style.gap = levelGap;
         this.cards.forEach(card => {
             const cardElement = document.createElement('div');
             cardElement.classList.add('card');

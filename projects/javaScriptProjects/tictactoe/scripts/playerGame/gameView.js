@@ -42,10 +42,12 @@ export const initializePlayerGame = (startGameButton, gameBoard, gameCells, game
         gameCells[index].textContent = currentPlayer === "Player 1" ? "X" : "O";
 
         const winner = determineWinner(boardState);
+        const playerNames = getPlayerNames();
+
         if (winner) {
-            const playerNames = getPlayerNames();
+            const loser = winner === "Player 1" ? "Player 2" : "Player 1";
             gameMessage.textContent = `${playerNames[winner]} wins!`;
-            recordWin(playerNames[winner]);
+            recordWin(playerNames[winner], playerNames[loser]);
             isGameActive = false;
         } else if (isDraw(boardState)) {
             gameMessage.textContent = "It's a draw!";
@@ -57,6 +59,8 @@ export const initializePlayerGame = (startGameButton, gameBoard, gameCells, game
             updateGameMessage();
         }
     };
+
+
 
     const resetGame = () => {
         boardState = Array(9).fill(null);

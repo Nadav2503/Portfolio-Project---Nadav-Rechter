@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         leaderboardContainerElement.innerHTML = '';
 
         const sortedPlayerEntries = Object.entries(leaderboardData)
-            .sort(([playerNameA, statsA], [playerNameB, statsB]) => {
+            .sort(([statsA], [statsB]) => {
                 if (statsB.wins !== statsA.wins) return statsB.wins - statsA.wins;
                 return statsA.games - statsB.games;
             });

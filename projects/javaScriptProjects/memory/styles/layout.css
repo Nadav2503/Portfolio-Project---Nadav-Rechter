@@ -28,6 +28,10 @@ h1 {
     box-sizing: border-box;
 }
 
+.hidden {
+    display: none;
+}
+
 #timer {
     margin: 20px 0;
     font-size: 1.2em;

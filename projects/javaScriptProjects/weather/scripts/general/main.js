@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     displayError(validationResult.message);
                 }
             } else {
-                displayError('Please enter a city name.');
+                displayError('בבקשה הכנס/י עיר שקיימת בעולם');
             }
         });
     }

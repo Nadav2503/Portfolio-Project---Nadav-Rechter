@@ -30,7 +30,7 @@ export const validateCityName = async (cityName) => {
         if (!response.ok) {
             const errorData = await response.json();
             if (errorData.message) {
-                return { isValid: false, message: `Error: ${errorData.message}` };
+                return { isValid: false, message: `העיר לא כתובה נכון` };
             }
             return { isValid: false, message: "העיר לא קיימת במערכת" };
         }
@@ -53,7 +53,6 @@ export const validateCityName = async (cityName) => {
             }
         };
     } catch (error) {
-        console.error('Fetch error:', error);
         return { isValid: false, message: "העיר לא קיימת במערכת" };
     }
 };

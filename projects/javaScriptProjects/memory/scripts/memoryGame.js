@@ -29,6 +29,8 @@ export default class MemoryGame {
         this.deck.renderDeck(this.cardClickHandler);
         renderBoard(this.deck, this.level, this.cardClickHandler);
         this.startTimer();
+        document.getElementById('level-selection').classList.add('hidden');
+        document.getElementById('start-game-btn').classList.add('hidden');
     }
 
     setLevel(level) {

@@ -69,7 +69,7 @@ export const initializeGameUi = (startGameBtn, gameBoard, gameCells, gameStatusM
     }
 
     function resetGame() {
-        document.getElementById('player1NameInput').value = '';
+        document.getElementById('playerName').value = '';
         document.querySelector('.name-inputs').style.display = 'flex';
         gameBoard.style.display = 'none';
         restartGameBtn.style.display = 'none';

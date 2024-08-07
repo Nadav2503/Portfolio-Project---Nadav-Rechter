@@ -21,13 +21,20 @@ export const determineWinner = (boardState) => {
 
 export const isDraw = (boardState) => boardState.every(cell => cell !== null);
 
-export const recordWin = (playerName) => {
+export const recordWin = (winnerName, loserName) => {
     let leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || {};
-    if (!leaderboard[playerName]) {
-        leaderboard[playerName] = { wins: 0, games: 0 };
+
+    if (!leaderboard[winnerName]) {
+        leaderboard[winnerName] = { wins: 0, games: 0 };
     }
-    leaderboard[playerName].wins += 1;
-    leaderboard[playerName].games += 1;
+    leaderboard[winnerName].wins += 1;
+    leaderboard[winnerName].games += 1;
+
+    if (!leaderboard[loserName]) {
+        leaderboard[loserName] = { wins: 0, games: 0 };
+    }
+    leaderboard[loserName].games += 1;
+
     localStorage.setItem('leaderboard', JSON.stringify(leaderboard));
 };
 
