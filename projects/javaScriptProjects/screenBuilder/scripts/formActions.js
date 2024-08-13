@@ -14,9 +14,9 @@ export function addNewElement() {
     const borderType = document.getElementById("borderTypeInput").value;
     const text = document.getElementById("textInput").value;
     const textAlignHorizontal = document.getElementById("textAlignHorizontalInput").value;
-    const textAlignVertical = document.getElementById("textAlignVerticalInput").value;
-    const fontSize = parseInt(document.getElementById("fontSizeInput").value, 10);
+    const textAlignVertical = document.getElementById("textAlignVerticalInput")?.value;
     const fontStyle = document.getElementById("fontStyleInput").value;
+    const fontFamily = document.getElementById("fontFamilySelect").value;
     const listType = document.getElementById("listTypeSelect")?.value;
     const numListItems = parseInt(document.getElementById("numListItems")?.value, 10);
     const headerLevel = document.getElementById("headerLevelSelect")?.value;
@@ -33,27 +33,11 @@ export function addNewElement() {
         return;
     }
 
-    const styles = {
-        bgColor,
-        textColor,
-        width,
-        height,
-        padding,
-        margin,
-        border,
-        borderColor,
-        borderType,
-        textAlignHorizontal,
-        textAlignVertical,
-        fontSize,
-        fontStyle
-    };
-
     const viewportWidth = window.innerWidth;
-    const totalWidth = calculateTotalWidth(styles);
+    const totalWidth = calculateTotalWidth({ width, padding, margin, border });
 
     if (totalWidth > viewportWidth) {
-        displayMessage("The size of the element is to big. Please adjust the parameters.", "error");
+        displayMessage("The size of the element is too big. Please adjust the parameters.", "error");
         return;
     }
 
@@ -61,19 +45,19 @@ export function addNewElement() {
 
     switch (elementType) {
         case 'div':
-            newElement = createDivElement(styles, text, shape);
+            newElement = createDivElement(bgColor, textColor, width, height, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, textAlignVertical, fontStyle, fontFamily, shape);
             break;
         case 'p':
-            newElement = createParagraphElement(styles, text);
-            break;
+            newElement = createParagraphElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily);
+            break
         case 'h':
-            newElement = createHeaderElement(styles, text, headerLevel);
+            newElement = createHeaderElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily, headerLevel);
             break;
         case 'list':
-            newElement = createListElement(styles, text, listType, numListItems);
+            newElement = createListElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily, listType, numListItems);
             break;
         case 'table':
-            newElement = createTableElement(styles, numRows, numCols, cellContent, cellAlignHorizontal, cellAlignVertical);
+            newElement = createTableElement(bgColor, textColor, width, height, padding, margin, border, borderColor, borderType, fontStyle, fontFamily, numRows, numCols, cellContent, cellAlignHorizontal, cellAlignVertical);
             break;
         default:
             displayMessage("Unknown element type", "error");

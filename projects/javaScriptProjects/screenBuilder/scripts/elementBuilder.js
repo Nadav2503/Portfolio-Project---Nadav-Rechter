@@ -1,43 +1,84 @@
-export function createDivElement(styles, text, shape) {
+export function createDivElement(bgColor, textColor, width, height, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, textAlignVertical, fontStyle, fontFamily, shape) {
     const newElement = document.createElement("div");
     newElement.classList.add("shape");
     if (shape) {
-        newElement.classList.add(shape.value);
+        newElement.classList.add(shape);
     }
-    applyStyles(newElement, styles);
+    newElement.style.backgroundColor = bgColor;
+    newElement.style.color = textColor;
+    newElement.style.width = `${width}px`;
+    newElement.style.height = `${height}px`;
+    newElement.style.padding = `${padding}px`;
+    newElement.style.margin = `${margin}px`;
+    newElement.style.border = `${border}px ${borderType} ${borderColor}`;
+    newElement.style.textAlign = textAlignHorizontal;
+    newElement.style.verticalAlign = textAlignVertical;
+    newElement.style.fontStyle = fontStyle;
+    newElement.style.fontFamily = fontFamily;
     newElement.innerText = text;
+    newElement.style.overflowWrap = 'break-word';
+    newElement.style.overflow = 'hidden';
+
     if (shape === 'circle') {
         newElement.style.borderRadius = '50%';
     } else if (shape === 'diamond') {
         newElement.style.transform = "rotate(45deg)";
         newElement.style.transformOrigin = "center";
-        newElement.style.marginLeft = `${styles.width / 2}px`;
-        newElement.style.marginTop = `${styles.height / 2}px`;
-        newElement.style.marginRight = `${styles.width / 2}px`;
-        newElement.style.marginBottom = `${styles.height / 2}px`;
+        newElement.style.marginLeft = `${width / 2}px`;
+        newElement.style.marginTop = `${height / 2}px`;
+        newElement.style.marginRight = `${width / 2}px`;
+        newElement.style.marginBottom = `${height / 2}px`;
     }
     return newElement;
 }
 
-export function createParagraphElement(styles, text) {
+export function createParagraphElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily) {
     const newElement = document.createElement("p");
-    applyStyles(newElement, styles);
+    newElement.style.backgroundColor = bgColor;
+    newElement.style.color = textColor;
+    newElement.style.width = `${width}px`;
+    newElement.style.padding = `${padding}px`;
+    newElement.style.margin = `${margin}px`;
+    newElement.style.border = `${border}px ${borderType} ${borderColor}`;
+    newElement.style.textAlign = textAlignHorizontal;
+    newElement.style.fontStyle = fontStyle;
+    newElement.style.fontFamily = fontFamily;
+    newElement.style.overflowWrap = 'break-word';
+    newElement.style.overflow = 'hidden';
     newElement.innerText = text;
     return newElement;
 }
 
-export function createHeaderElement(styles, text, headerLevel) {
+export function createHeaderElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily, headerLevel) {
     const newElement = document.createElement(headerLevel);
-    applyStyles(newElement, styles);
+    newElement.style.backgroundColor = bgColor;
+    newElement.style.color = textColor;
+    newElement.style.width = `${width}px`;
+    newElement.style.padding = `${padding}px`;
+    newElement.style.margin = `${margin}px`;
+    newElement.style.border = `${border}px ${borderType} ${borderColor}`;
+    newElement.style.textAlign = textAlignHorizontal;
+    newElement.style.fontStyle = fontStyle;
+    newElement.style.fontFamily = fontFamily;
+    newElement.style.overflowWrap = 'break-word';
+    newElement.style.overflow = 'hidden';
     newElement.innerText = text;
-    newElement.style.width = `${styles.width}px`;
     return newElement;
 }
 
-export function createListElement(styles, text, listType, numListItems) {
+export function createListElement(bgColor, textColor, width, padding, margin, border, borderColor, borderType, text, textAlignHorizontal, fontStyle, fontFamily, listType, numListItems) {
     const newElement = document.createElement(listType);
-    applyStyles(newElement, styles);
-    newElement.style.padding = `${styles.padding}px`;
+    newElement.style.backgroundColor = bgColor;
+    newElement.style.color = textColor;
+    newElement.style.width = `${width}px`;
+    newElement.style.padding = `${padding}px`;
+    newElement.style.margin = `${margin}px`;
+    newElement.style.border = `${border}px ${borderType} ${borderColor}`;
+    newElement.style.textAlign = textAlignHorizontal;
+    newElement.style.fontStyle = fontStyle;
+    newElement.style.fontFamily = fontFamily;
+    newElement.style.overflowWrap = 'break-word';
+    newElement.style.overflow = 'hidden';
 
     for (let i = 0; i < numListItems; i++) {
         const listItem = document.createElement("li");
@@ -47,9 +88,19 @@ export function createListElement(styles, text, listType, numListItems) {
     return newElement;
 }
 
-export function createTableElement(styles, numRows, numCols, cellContent, cellAlignHorizontal, cellAlignVertical) {
+export function createTableElement(bgColor, textColor, width, height, padding, margin, border, borderColor, borderType, fontStyle, fontFamily, numRows, numCols, cellContent, cellAlignHorizontal, cellAlignVertical) {
     const newElement = document.createElement("table");
-    applyStyles(newElement, styles);
+    newElement.style.backgroundColor = bgColor;
+    newElement.style.color = textColor;
+    newElement.style.width = `${width}px`;
+    newElement.style.height = `${height}px`;
+    newElement.style.padding = `${padding}px`;
+    newElement.style.margin = `${margin}px`;
+    newElement.style.border = `${border}px ${borderType} ${borderColor}`;
+    newElement.style.fontStyle = fontStyle;
+    newElement.style.fontFamily = fontFamily;
+    newElement.style.overflowWrap = 'break-word';
+    newElement.style.overflow = 'hidden';
 
     for (let r = 0; r < numRows; r++) {
         const row = document.createElement("tr");
@@ -59,7 +110,11 @@ export function createTableElement(styles, numRows, numCols, cellContent, cellAl
             cell.innerText = cellContent[index] || '';
             cell.style.textAlign = cellAlignHorizontal;
             cell.style.verticalAlign = cellAlignVertical;
-            applyStyles(cell, styles);
+            cell.style.backgroundColor = bgColor;
+            cell.style.color = textColor;
+            cell.style.overflowWrap = 'break-word';
+            cell.style.overflow = 'hidden';
+            applyStyles(cell, { padding, margin, border, borderColor, borderType, fontStyle, fontFamily });
             row.appendChild(cell);
         }
         newElement.appendChild(row);
@@ -67,16 +122,3 @@ export function createTableElement(styles, numRows, numCols, cellContent, cellAl
     return newElement;
 }
 
-export function applyStyles(element, styles) {
-    element.style.backgroundColor = styles.bgColor;
-    element.style.color = styles.textColor;
-    element.style.width = `${styles.width}px`;
-    element.style.height = `${styles.height}px`;
-    element.style.padding = `${styles.padding}px`;
-    element.style.margin = `${styles.margin}px`;
-    element.style.border = `${styles.border}px ${styles.borderType} ${styles.borderColor}`;
-    element.style.textAlign = styles.textAlignHorizontal;
-    element.style.verticalAlign = styles.textAlignVertical;
-    element.style.fontSize = `${styles.fontSize}px`;
-    element.style.fontStyle = styles.fontStyle;
-}

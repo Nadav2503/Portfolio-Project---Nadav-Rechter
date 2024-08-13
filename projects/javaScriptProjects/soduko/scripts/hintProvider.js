@@ -2,7 +2,6 @@ import SudokuValidator from './sudokuValidator.js';
 
 export function provideHint(sudokuGrid, hintCount, updateHintCount, updateHintButton, showMessage) {
     if (hintCount >= 3) {
-        showMessage('No more hints available.');
         updateHintButton(hintCount);
         return;
     }
@@ -55,7 +54,7 @@ export function provideHint(sudokuGrid, hintCount, updateHintCount, updateHintBu
 
             updateHintCount(hintCount + 1);
             updateHintButton(hintCount + 1);
-            showMessage(`Hint provided: Cell [${row + 1}, ${col + 1}] should be ${num}.`);
+            showMessage(`Hint provided. You have ${3 - hintCount - 1} hint(s) left.`);
             return;
         }
 

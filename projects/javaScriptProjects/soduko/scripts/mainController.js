@@ -19,6 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHintButton(hintCount);
     }
 
+    function enableControls() {
+        document.getElementById('check-solution').disabled = false;
+        document.getElementById('hint-button').disabled = false;
+        document.getElementById('solve-puzzle').disabled = false
+    }
+
+    function disableControls() {
+        document.getElementById('check-solution').disabled = true;
+        document.getElementById('hint-button').disabled = true;
+        document.getElementById('solve-puzzle').disabled = true;
+    }
+    disableControls();
     document.getElementById('new-puzzle').addEventListener('click', () => {
         const difficulty = document.getElementById('difficulty').value;
         const board = SudokuGenerator.generate(difficulty);
@@ -37,6 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateHintCount(hintCount);
         renderSudokuBoard(sudokuGrid, sudokuContainer, true);
         showMessage('New puzzle generated. You can now start filling it.');
+        enableControls();
     });
 
     document.getElementById('check-solution').addEventListener('click', () => {
