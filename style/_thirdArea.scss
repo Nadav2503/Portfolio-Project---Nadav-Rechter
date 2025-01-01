@@ -28,6 +28,7 @@
                 display: flex;
                 justify-content: center; // Center icons horizontally
                 gap: 20px; // Space between icons
+                flex-wrap: wrap;
 
                 img {
                     width: 60px; // Set consistent width
@@ -139,6 +140,7 @@
                 display: flex;
                 justify-content: center; // Center icons horizontally
                 gap: 20px; // Space between icons
+                flex-wrap: wrap;
 
                 img {
                     width: 60px; // Set consistent width

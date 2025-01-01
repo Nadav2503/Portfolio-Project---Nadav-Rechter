@@ -167,6 +167,7 @@ header .navbar .navbar-nav .nav-link:hover {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 #thirdArea .containerOfProject .beforeTheProject .knowledge img {
   width: 60px;
@@ -263,6 +264,7 @@ header .navbar .navbar-nav .nav-link:hover {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
 }
 #javascriptProjects .containerOfProject .beforeTheProject .knowledge img {
   width: 60px;
